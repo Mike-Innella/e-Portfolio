@@ -11,6 +11,18 @@
   margin: 0 auto;
   padding: 0 var(--spacing-md);
   margin-top: 128px;
+  animation: slideIn 0.8s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .contact__heading {
@@ -25,7 +37,7 @@
   flex-direction: column;
   background-color: var(--bg-primary);
   padding: var(--spacing-lg);
-  border-radius: var(--border-radius);
+  border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -33,11 +45,22 @@
 .contact__textarea {
   margin-bottom: var(--spacing-md);
   padding: var(--spacing-sm);
-  border: var(--border-width) solid var(--text-secondary);
+  border: 2px solid #00ffff33;
   border-radius: var(--border-radius);
   font-size: 16px;
   background-color: var(--bg-secondary);
   color: var(--text-primary);
+  transition: all 400ms ease;
+}
+
+.contact__input:hover,
+.contact__textarea:hover {
+  border: 2px solid #00ffff99;
+}
+.contact__input:focus,
+.contact__textarea:focus {
+  border: 2px solid var(--text-primary);
+  outline: none;
 }
 
 .contact__textarea {
@@ -54,11 +77,44 @@
   border-radius: var(--border-radius);
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 400ms ease;
+  position: relative;
+}
+
+.contact__button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  pointer-events: none;
 }
 
 .contact__button:hover {
   background-color: var(--accent-secondary);
+  animation: shimmer 1s infinite ease;
+  transform: translateY(-4px);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.contact__button:active {
+  color: #1c1d25;
+  background-color: #fca728;
+  transform: translateY(8px) scale(0.75);
 }
 
 .contact__button:disabled {
@@ -90,11 +146,11 @@
   .contact__heading {
     font-size: 28px;
   }
-  
+
   .contact__form {
     padding: var(--spacing-md);
   }
-  
+
   .contact__button {
     width: 100%;
   }

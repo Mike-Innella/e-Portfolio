@@ -4,7 +4,11 @@ import { validateForm } from "../utils/validateForm";
 import "../styles/contact.css";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    message: "",
+  });
   const [status, setStatus] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -14,37 +18,37 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm(formData)) {
       setStatus({
         type: "error",
-        message: "Please fill out all fields with valid information."
+        message: "Please fill out all fields with valid information.",
       });
       return;
     }
-    
+
     setIsSubmitting(true);
     setStatus(null);
-    
+
     try {
       const success = await sendEmail(formData);
-      
+
       if (success) {
         setStatus({
           type: "success",
-          message: "Message sent! I'll get back to you soon."
+          message: "Message sent! I'll get back to you soon.",
         });
         setFormData({ name: "", email: "", message: "" });
       } else {
         setStatus({
           type: "error",
-          message: "Failed to send message. Please try again later."
+          message: "Failed to send message. Please try again later.",
         });
       }
     } catch (error) {
       setStatus({
         type: "error",
-        message: "An error occurred. Please try again later."
+        message: "An error occurred. Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
@@ -58,8 +62,8 @@ const Contact = () => {
         <form className="contact__form" onSubmit={handleSubmit}>
           <input
             type="text"
-            name="name"
-            value={formData.name}
+            name="user_name"
+            value={formData.user_name}
             onChange={handleChange}
             placeholder="Name"
             className="contact__input"
@@ -67,8 +71,8 @@ const Contact = () => {
           />
           <input
             type="email"
-            name="email"
-            value={formData.email}
+            name="user_email"
+            value={formData.user_email}
             onChange={handleChange}
             placeholder="Email"
             className="contact__input"
@@ -82,15 +86,15 @@ const Contact = () => {
             className="contact__textarea"
             disabled={isSubmitting}
           />
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="contact__button"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>
         </form>
-        
+
         {status && (
           <div className={`contact__status contact__status--${status.type}`}>
             {status.message}
