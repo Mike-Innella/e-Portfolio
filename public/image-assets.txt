@@ -1,0 +1,18 @@
+Required Image Assets:
+
+1. logo-black.png
+   - Used in the header as the main logo
+   - Path: /public/logo-black.png
+   - The logo shown in the provided images
+
+2. headshot-enhanced.jpg
+   - Used in the About section as profile picture
+   - Path: /public/headshot-enhanced.jpg
+   - The professional headshot shown in the provided images
+
+3. richmond.jpg (optional)
+   - Could be used as a background element
+   - Path: /public/richmond.jpg
+   - The Richmond skyline shown in the provided images
+
+Note: These images need to be placed in the public directory for the portfolio to display correctly.

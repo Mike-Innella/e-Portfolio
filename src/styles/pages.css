@@ -1,0 +1,25 @@
+.page {
+  min-height: calc(100vh - 80px); /* Adjust based on your header height */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.page.home {
+  padding: 0; /* Remove padding for home page to allow hero to be full width */
+}
+
+/* Add transitions for page changes */
+.page {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

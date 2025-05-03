@@ -1,0 +1,153 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: var(--spacing-sm) 0;
+  padding-bottom: 12px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.header__logo {
+  height: 96px;
+  width: auto;
+  transition: all 400ms ease;
+  filter: invert(1);
+  transform: scale(0.9);
+}
+
+.logo__wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.logo__link {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background-color 300ms ease;
+}
+
+.logo__link:hover {
+  background-color: #f0f0f011;
+}
+
+.logo__text {
+  margin-left: 12px;
+  margin-right: 24px;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-24px) scale(1);
+  transition: all 400ms ease;
+  white-space: nowrap;
+  color: var(--text-primary);
+}
+
+.logo__link:hover .logo__text {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  text-decoration: none;
+}
+
+.logo__link:hover .header__logo {
+  transform: scale(1);
+}
+
+.logo__text:hover {
+  color: var(--accent-primary);
+}
+
+.logo__text:active {
+  transform: scale(0.9);
+}
+
+.header__nav {
+  display: flex;
+}
+
+.header__list {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-xl);
+}
+
+.header__item {
+  margin-left: var(--spacing-md);
+  cursor: pointer;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  a {
+    font-size: 20px;
+  }
+}
+
+.header__item:hover {
+  color: var(--accent-primary);
+}
+
+/* Mobile menu */
+.header__menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header__menu-button {
+    display: block;
+  }
+
+  .header__nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 99;
+  }
+
+  .header__nav--open {
+    transform: translateY(0);
+  }
+
+  .header__list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header__item {
+    margin: var(--spacing-sm) 0;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--text-secondary);
+    width: 100%;
+    text-align: center;
+  }
+
+  .header__item:last-child {
+    border-bottom: none;
+  }
+}
