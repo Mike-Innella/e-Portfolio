@@ -38,7 +38,7 @@ const Contact = () => {
           type: "success",
           message: "Message sent! I'll get back to you soon.",
         });
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ user_name: "", user_email: "", message: "" });
       } else {
         setStatus({
           type: "error",
