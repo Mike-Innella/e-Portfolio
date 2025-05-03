@@ -113,7 +113,6 @@
   transform: translateX(-4px);
 }
 
-
 .about__contact-link {
   font-size: 16px;
   color: var(--text-primary);
@@ -130,6 +129,7 @@
   border-radius: 16px;
   transition: background-color 400ms ease-in-out; /* optional */
   z-index: 0;
+  cursor: default;
 }
 
 /* Icon inside */

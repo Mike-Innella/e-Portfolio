@@ -1,12 +1,16 @@
 .contact {
   padding: var(--spacing-xl) 0;
   background-color: var(--bg-secondary);
+  min-height: calc(100vh - 64px);
+  flex: 1;
+  overflow: hidden;
 }
 
 .contact__container {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+  margin-top: 128px;
 }
 
 .contact__heading {
