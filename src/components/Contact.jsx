@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { sendEmail } from "../services/emailService";
 import { validateForm } from "../utils/validateForm";
+import SkeletonLoader from "../utils/skeletonLoader";
 import "../styles/contact.css";
 
 const Contact = () => {
@@ -11,6 +12,12 @@ const Contact = () => {
   });
   const [status, setStatus] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -59,46 +66,61 @@ const Contact = () => {
     <section id="contact" className="contact">
       <div className="contact__container">
         <h2 className="contact__heading">Contact Me</h2>
-        <form className="contact__form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="user_name"
-            value={formData.user_name}
-            onChange={handleChange}
-            placeholder="Name"
-            className="contact__input"
-            disabled={isSubmitting}
-          />
-          <input
-            type="email"
-            name="user_email"
-            value={formData.user_email}
-            onChange={handleChange}
-            placeholder="Email"
-            className="contact__input"
-            disabled={isSubmitting}
-          />
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Message"
-            className="contact__textarea"
-            disabled={isSubmitting}
-          />
-          <button
-            type="submit"
-            className="contact__button"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </button>
-        </form>
 
-        {status && (
-          <div className={`contact__status contact__status--${status.type}`}>
-            {status.message}
-          </div>
+        {isLoading ? (
+          <>
+            <SkeletonLoader type="title" />
+            <SkeletonLoader type="text" />
+            <SkeletonLoader type="text" />
+            <SkeletonLoader type="text" />
+            <SkeletonLoader type="button" />
+          </>
+        ) : (
+          <>
+            <form className="contact__form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="user_name"
+                value={formData.user_name}
+                onChange={handleChange}
+                placeholder="Name"
+                className="contact__input"
+                disabled={isSubmitting}
+              />
+              <input
+                type="email"
+                name="user_email"
+                value={formData.user_email}
+                onChange={handleChange}
+                placeholder="Email"
+                className="contact__input"
+                disabled={isSubmitting}
+              />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Message"
+                className="contact__textarea"
+                disabled={isSubmitting}
+              />
+              <button
+                type="submit"
+                className="contact__button"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+
+            {status && (
+              <div
+                className={`contact__status contact__status--${status.type}`}
+              >
+                {status.message}
+              </div>
+            )}
+          </>
         )}
       </div>
     </section>

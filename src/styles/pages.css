@@ -10,7 +10,7 @@
 
 /* Add transitions for page changes */
 .page {
-  animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn 800ms ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -23,3 +23,4 @@
     transform: translateY(0);
   }
 }
+

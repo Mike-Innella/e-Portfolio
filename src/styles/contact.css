@@ -11,18 +11,6 @@
   margin: 0 auto;
   padding: 0 var(--spacing-md);
   margin-top: 128px;
-  animation: slideIn 0.8s ease;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-200%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 .contact__heading {
