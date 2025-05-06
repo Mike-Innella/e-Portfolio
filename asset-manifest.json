@@ -1,27 +1,33 @@
 {
   "files": {
-    "main.css": "/e-Portfolio/static/css/main.e21d7159.css",
-    "main.js": "/e-Portfolio/static/js/main.b466c81a.js",
+    "main.css": "/e-Portfolio/static/css/main.4835883b.css",
+    "main.js": "/e-Portfolio/static/js/main.fba4c390.js",
     "static/media/richmond.jpg": "/e-Portfolio/static/media/richmond.73c1e37394b8743319b5.jpg",
     "static/media/fa-solid-900.ttf": "/e-Portfolio/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/headshot-enhanced.png": "/e-Portfolio/static/media/headshot-enhanced.08f9c48d659a281308d3.png",
     "static/media/fa-brands-400.ttf": "/e-Portfolio/static/media/fa-brands-400.1815e00441357e01619e.ttf",
     "static/media/logo-black-png.PNG": "/e-Portfolio/static/media/logo-black-png.55d96cfc1243065441a6.PNG",
     "static/media/fa-solid-900.woff2": "/e-Portfolio/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/nftmarket.png": "/e-Portfolio/static/media/nftmarket.6593a4fcb1ccb13792fa.png",
     "static/media/OMDB.png": "/e-Portfolio/static/media/OMDB.da2a41c20a2d81555712.png",
     "static/media/fa-brands-400.woff2": "/e-Portfolio/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/books.png": "/e-Portfolio/static/media/books.286093773f0a8ba1442a.png",
     "static/media/treact.png": "/e-Portfolio/static/media/treact.f9e16c01f7280782ad94.png",
     "static/media/fa-regular-400.ttf": "/e-Portfolio/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
     "static/media/Fweather.png": "/e-Portfolio/static/media/Fweather.48056a8210e4cd319c50.png",
     "static/media/fa-regular-400.woff2": "/e-Portfolio/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
     "static/media/fa-v4compatibility.ttf": "/e-Portfolio/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/e-Portfolio/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
+    "static/media/slick.svg": "/e-Portfolio/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/e-Portfolio/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/e-Portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "index.html": "/e-Portfolio/index.html",
-    "main.e21d7159.css.map": "/e-Portfolio/static/css/main.e21d7159.css.map",
-    "main.b466c81a.js.map": "/e-Portfolio/static/js/main.b466c81a.js.map"
+    "static/media/slick.woff": "/e-Portfolio/static/media/slick.295183786cd8a1389865.woff",
+    "main.4835883b.css.map": "/e-Portfolio/static/css/main.4835883b.css.map",
+    "main.fba4c390.js.map": "/e-Portfolio/static/js/main.fba4c390.js.map"
   },
   "entrypoints": [
-    "static/css/main.e21d7159.css",
-    "static/js/main.b466c81a.js"
+    "static/css/main.4835883b.css",
+    "static/js/main.fba4c390.js"
   ]
 }
