@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/components/about.css";
 import { Link } from "react-router-dom";
 import headshot from "../assets/headshot-enhanced.png";
-import AboutSkeleton from "../UI/AboutSkeleton";
+import AboutSkeleton from "../UI/Skeleton Loaders/AboutSkeleton";
 
 const About = () => {
   const [isLoading, setIsLoading] = useState(true);

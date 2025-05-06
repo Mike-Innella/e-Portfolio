@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/components/hero.css";
-import HeroSkeleton from "../UI/HeroSkeleton"; // use new component
+import HeroSkeleton from "../UI/Skeleton Loaders/HeroSkeleton";
 import heroBg from "../assets/richmond.jpg";
 
 const Hero = () => {
