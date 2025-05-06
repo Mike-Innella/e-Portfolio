@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "../styles/header.css";
+import "../styles/components/header.css";
 import logoBlack from "../assets/logo-black-png.PNG";
 
 const Header = () => {

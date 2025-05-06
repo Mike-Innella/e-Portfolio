@@ -6,10 +6,10 @@ import Header from "./components/Header";
 import "./styles/global.css";
 import "./styles/pages.css";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
+import Home from "./pages/HomePage";
+import About from "./pages/AboutPage";
+import Projects from "./pages/ProjectsPage";
+import Contact from "./pages/ContactPage";
 
 const App = () => (
   <Router>

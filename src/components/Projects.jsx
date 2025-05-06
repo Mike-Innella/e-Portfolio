@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "../styles/projects.css";
+import "../styles/components/projects.css";
 import projectsData from "../locales/ProjectsData";
-import SkeletonLoader from "../utils/skeletonLoader";
+import ProjectCardSkeleton from "../UI/ProjectsSkeleton";
 
 const Projects = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,22 +12,14 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="projects" className="projects">
+    <section id="projects" className="projects" aria-busy={isLoading}>
       <div className="projects__container">
         <h2 className="projects__heading">Projects</h2>
 
         <div className="projects__grid">
           {isLoading
             ? Array.from({ length: 3 }).map((_, index) => (
-                <div key={index} className="project-card">
-                  <SkeletonLoader type="image" />
-                  <div className="project-card__content">
-                    <SkeletonLoader type="title" />
-                    <SkeletonLoader type="text" />
-                    <SkeletonLoader type="text" />
-                    <SkeletonLoader type="button" />
-                  </div>
-                </div>
+                <ProjectCardSkeleton key={index} />
               ))
             : projectsData.map((project) => (
                 <div key={project.id} className="project-card">
@@ -57,7 +49,7 @@ const Projects = () => {
                         >
                           <span className="project-card__link-icon">
                             <i className="fa-solid fa-desktop"></i>
-                          </span>{" "}
+                          </span>
                           Live Demo
                         </a>
                         <a
@@ -68,7 +60,7 @@ const Projects = () => {
                         >
                           <span className="project-card__link-icon">
                             <i className="fa-brands fa-github"></i>
-                          </span>{" "}
+                          </span>
                           View Code
                         </a>
                       </div>

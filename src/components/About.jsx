@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "../styles/about.css";
+import "../styles/components/about.css";
 import { Link } from "react-router-dom";
 import headshot from "../assets/headshot-enhanced.png";
-import SkeletonLoader from "../utils/skeletonLoader";
+import AboutSkeleton from "../UI/AboutSkeleton";
 
 const About = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,25 +13,10 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="about">
+    <section id="about" className="about" aria-busy={isLoading}>
       <div className="about__container">
         {isLoading ? (
-          <>
-            <div className="about__image-container">
-              <SkeletonLoader type="avatar" />
-            </div>
-            <div className="about__content">
-              <SkeletonLoader type="title" />
-              <SkeletonLoader type="text" />
-              <SkeletonLoader type="text" />
-              <SkeletonLoader type="text" />
-              <SkeletonLoader type="text" />
-              <SkeletonLoader type="text" />
-              <SkeletonLoader type="title" />
-              <SkeletonLoader type="text" />
-              <SkeletonLoader type="text" />
-            </div>
-          </>
+          <AboutSkeleton />
         ) : (
           <>
             <div className="about__image-container">
@@ -50,6 +35,7 @@ const About = () => {
                 to deliver high-quality projects that meet client needs and
                 exceed expectations.
               </p>
+
               <div className="about__wrapper--locate-contact">
                 <div className="about__location">
                   <i className="about__location-icon fa-solid fa-location-dot"></i>
@@ -66,6 +52,7 @@ const About = () => {
                   </Link>
                 </div>
               </div>
+
               <div className="about__skills">
                 <h3 className="about__skills-title">Technical Skills</h3>
                 <ul className="about__skills-list">

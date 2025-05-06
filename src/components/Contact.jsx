@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { sendEmail } from "../services/emailService";
 import { validateForm } from "../utils/validateForm";
-import SkeletonLoader from "../utils/skeletonLoader";
-import "../styles/contact.css";
+import ContactSkeleton from "../UI/ContactSkeleton"; // <- updated
+import "../styles/components/contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -63,18 +63,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="contact" aria-busy={isLoading}>
       <div className="contact__container">
         <h2 className="contact__heading">Contact Me</h2>
 
         {isLoading ? (
-          <>
-            <SkeletonLoader type="title" />
-            <SkeletonLoader type="text" />
-            <SkeletonLoader type="text" />
-            <SkeletonLoader type="text" />
-            <SkeletonLoader type="button" />
-          </>
+          <ContactSkeleton />
         ) : (
           <>
             <form className="contact__form" onSubmit={handleSubmit}>

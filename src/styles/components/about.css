@@ -51,6 +51,11 @@
   z-index: 0;
 }
 
+/* Disable avatar box-shadow glow during skeleton loading */
+[aria-busy="true"] .about__image-container::before {
+  box-shadow: none !important;
+}
+
 .about__content {
   margin-top: 128px;
   flex: 1;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../styles/hero.css";
-import SkeletonLoader from "../utils/skeletonLoader";
+import "../styles/components/hero.css";
+import HeroSkeleton from "../UI/HeroSkeleton"; // use new component
 import heroBg from "../assets/richmond.jpg";
 
 const Hero = () => {
@@ -24,15 +24,11 @@ const Hero = () => {
       id="hero"
       className={`hero ${isBgLoaded ? "bg-loaded" : "bg-loading"}`}
       style={isBgLoaded ? { "--hero-bg": `url(${heroBg})` } : {}}
+      aria-busy={isContentLoading}
     >
       <div className="hero__content">
         {isContentLoading ? (
-          <>
-            <SkeletonLoader type="title" />
-            <SkeletonLoader type="text" />
-            <SkeletonLoader type="text" />
-            <SkeletonLoader type="button" />
-          </>
+          <HeroSkeleton />
         ) : (
           <>
             <h1 className="hero__title">Hi, I'm Mike Innella</h1>

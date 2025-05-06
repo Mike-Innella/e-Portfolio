@@ -162,6 +162,16 @@
   margin-right: var(--spacing-xs);
 }
 
+[aria-busy="true"] .contact__button::before {
+  display: none;
+}
+
+[aria-busy="true"] .contact__button {
+  transform: none !important;
+  background-color: var(--text-secondary) !important;
+  cursor: default;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .projects__grid {
