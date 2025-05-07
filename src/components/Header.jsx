@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/components/header.css";
 import logoBlack from "../assets/logo-black-png.PNG";
-import TraceBorder from "../UI/Animations/TraceBorder";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +13,6 @@ const Header = () => {
 
   return (
     <header className="header">
-      <TraceBorder /> {/* ✅ Load animation definitions once */}
       <div className="header__container">
         <div className="logo__wrapper">
           <Link to="/" onClick={handleMenuClose} className="logo__link">

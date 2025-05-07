@@ -146,6 +146,7 @@
 
 .header__item.trace-hover:hover a {
   color: var(--text-primary);
+  box-shadow: 4px 4px 24px 16px var(--text-primary);
 }
 
 /* === Mobile menu button === */

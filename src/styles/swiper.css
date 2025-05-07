@@ -71,21 +71,22 @@
   color: #1e1e2f;
   font-size: 48px;
   transition: all 400ms ease-in-out;
-  z-index: 200;
+  z-index: 1000;
 }
 
 /* Arrows */
 .arrow-left i,
 .arrow-right i {
   font-size: 48x !important;
+  z-index: inherit;
 }
 
 .arrow-left {
-  left: 24px; /* adjust as needed */
+  left: 24px; 
 }
 
 .arrow-right {
-  right: 24px; /* adjust as needed */
+  right: 24px; 
 }
 
 /* Hover effect */

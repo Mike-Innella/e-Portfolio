@@ -17,10 +17,24 @@ const SwiperTrack = ({ isLoading, projectsData }) => {
   const swiperRef = useRef(null);
 
   useEffect(() => {
-    if (swiperRef.current?.swiper?.navigation) {
-      swiperRef.current.swiper.navigation.init();
-      swiperRef.current.swiper.navigation.update();
-    }
+    const swiper = swiperRef.current?.swiper;
+
+    // Retry logic after arrows are mounted
+    const timeout = setTimeout(() => {
+      const nextBtn = document.querySelector(".custom-next");
+      const prevBtn = document.querySelector(".custom-prev");
+
+      if (swiper && nextBtn && prevBtn) {
+        swiper.params.navigation.prevEl = nextBtn;
+        swiper.params.navigation.nextEl = prevBtn;
+
+        swiper.navigation.destroy();
+        swiper.navigation.init();
+        swiper.navigation.update();
+      }
+    }, 0);
+
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
