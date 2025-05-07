@@ -41,6 +41,8 @@
     --gradient-light: linear-gradient(135deg, #ffffff, #f5f5f5);
     --gradient-accent: linear-gradient(135deg, #1a63bd, #5ab4fd);
     --gradient-muted: linear-gradient(135deg, #e2e8f0, #cbd5e0);
+    --gradient-dark: linear-gradient(to bottom, #333333, #1a1a1a);
+    --gradient-dark-transparent: linear-gradient(to top #3333336f, #1a1a1a);
   }
 }
 

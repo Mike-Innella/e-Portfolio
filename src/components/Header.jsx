@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/components/header.css";
 import logoBlack from "../assets/logo-black-png.PNG";
+import TraceBorder from "../UI/Animations/TraceBorder";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,6 +14,7 @@ const Header = () => {
 
   return (
     <header className="header">
+      <TraceBorder /> {/* ✅ Load animation definitions once */}
       <div className="header__container">
         <div className="logo__wrapper">
           <Link to="/" onClick={handleMenuClose} className="logo__link">
@@ -42,7 +44,7 @@ const Header = () => {
         <nav className={`header__nav ${menuOpen ? "header__nav--open" : ""}`}>
           <ul className="header__list">
             <li
-              className={`header__item ${
+              className={`header__item trace-hover ${
                 location.pathname === "/about" ? "active" : ""
               }`}
             >
@@ -51,7 +53,7 @@ const Header = () => {
               </Link>
             </li>
             <li
-              className={`header__item ${
+              className={`header__item trace-hover ${
                 location.pathname === "/projects" ? "active" : ""
               }`}
             >
@@ -60,7 +62,7 @@ const Header = () => {
               </Link>
             </li>
             <li
-              className={`header__item ${
+              className={`header__item trace-hover ${
                 location.pathname === "/contact" ? "active" : ""
               }`}
             >
