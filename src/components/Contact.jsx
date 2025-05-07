@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { sendEmail } from "../services/emailService";
 import { validateForm } from "../utils/validateForm";
-import ContactSkeleton from "../UI/Skeleton Loaders/ContactSkeleton";
+import ContactSkeleton from "../UI/Skeleton-Loaders/ContactSkeleton";
 import "../styles/components/contact.css";
 
 const Contact = () => {

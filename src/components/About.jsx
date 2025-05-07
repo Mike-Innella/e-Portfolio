@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import "../styles/components/about.css";
 import { Link } from "react-router-dom";
 import headshot from "../assets/headshot-enhanced.png";
-import AboutSkeleton from "../UI/Skeleton Loaders/AboutSkeleton";
+import aboutSkills from "../locales/AboutSkills";
+import AboutSkeleton from "../UI/Skeleton-Loaders/AboutSkeleton";
+import HueShift from "../UI/Animations/HueShift";
+import GlassSwipe from "../UI/Animations/GlassSwipe";
+import Pulse from "../UI/Animations/Pulse";
 
 const About = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,6 +24,7 @@ const About = () => {
         ) : (
           <>
             <div className="about__image-container">
+              <HueShift />
               <img src={headshot} alt="Mike Innella" className="about__image" />
             </div>
             <div className="about__content">
@@ -38,7 +43,8 @@ const About = () => {
 
               <div className="about__wrapper--locate-contact">
                 <div className="about__location">
-                  <i className="about__location-icon fa-solid fa-location-dot"></i>
+                  <Pulse />
+                  <i className="about__location-icon fa-solid fa-location-dot" />
                   <span className="about__location-text">
                     Based in Richmond, VA USA
                   </span>
@@ -52,30 +58,16 @@ const About = () => {
                   </Link>
                 </div>
               </div>
-
               <div className="about__skills">
                 <h3 className="about__skills-title">Technical Skills</h3>
                 <ul className="about__skills-list">
-                  <li className="about__skill">
-                    <i className="devicon-html5-plain colored"></i>
-                    <span>HTML</span>
-                  </li>
-                  <li className="about__skill">
-                    <i className="devicon-css3-plain colored"></i>
-                    <span>CSS</span>
-                  </li>
-                  <li className="about__skill">
-                    <i className="devicon-javascript-plain colored"></i>
-                    <span>JavaScript</span>
-                  </li>
-                  <li className="about__skill">
-                    <i className="devicon-react-original colored"></i>
-                    <span>React</span>
-                  </li>
-                  <li className="about__skill">
-                    <i className="devicon-firebase-plain colored"></i>
-                    <span>Firebase</span>
-                  </li>
+                  {aboutSkills.map((skill, index) => (
+                    <li className="about__skill" key={index}>
+                      <GlassSwipe />
+                      <i className={skill.iconClass}></i>
+                      <span>{skill.name}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

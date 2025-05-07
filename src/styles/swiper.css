@@ -1,0 +1,99 @@
+/* === Swiper Container === */
+.slider--container {
+  width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible !important;
+}
+
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper-wrapper {
+  overflow: visible !important;
+}
+
+/* === Safe Swiper Overrides === */
+.swiper-slide {
+  transition: all 400ms ease;
+  overflow: visible !important;
+}
+
+/* === Focused Slide Only === */
+.swiper-slide-active {
+  z-index: 2;
+}
+
+/* === Hover Effects Only for Active Slide === */
+.swiper-slide-active .project-card:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 4px 4px 24px 20px #00000080;
+}
+
+.swiper-slide-active .project-card:hover .project-card__image,
+.swiper-slide-active .project-card:hover .project-card__title {
+  transform: scale(0.8);
+  opacity: 0.5;
+  filter: blur(6px);
+}
+
+.swiper-slide-active .project-card:hover .project-card__overlay {
+  top: 0;
+}
+
+.swiper-slide-active .project-card:hover .project-card__description {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+/* === Navigation Arrows === */
+/* Container for custom arrows */
+.swiper-arrow__container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  box-shadow: 0 0 8px #0000004d;
+  cursor: pointer;
+  transition: all 400ms ease;
+  z-index: 100;
+}
+
+.swiper-arrow__container i {
+  background-color: var(--accent-primary);
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e1e2f;
+  font-size: 48px;
+  transition: all 400ms ease-in-out;
+  z-index: 200;
+}
+
+/* Arrows */
+.arrow-left i,
+.arrow-right i {
+  font-size: 48x !important;
+}
+
+.arrow-left {
+  left: 24px; /* adjust as needed */
+}
+
+.arrow-right {
+  right: 24px; /* adjust as needed */
+}
+
+/* Hover effect */
+.swiper-arrow__container:hover {
+  background-color: var(--accent-secondary);
+  transform: translateY(-50%) scale(1.05);
+  animation: pulse 1.2s infinite ease-in-out;
+  i {
+    color: white;
+  }
+}

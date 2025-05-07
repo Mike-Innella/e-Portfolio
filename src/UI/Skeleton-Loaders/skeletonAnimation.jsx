@@ -1,4 +1,4 @@
-// src/UI/skeletonAnimation.jsx
+// src/UI/Skeleton-Loaders/skeletonAnimation.jsx
 import React, { useEffect } from "react";
 
 const shimmerStyle = {

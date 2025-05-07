@@ -1,3 +1,4 @@
+/* === Hero Container === */
 .hero {
   height: 100vh;
   display: flex;
@@ -12,6 +13,7 @@
   overflow: hidden;
 }
 
+/* === Background Image Layer === */
 .hero::before {
   content: "";
   position: absolute;
@@ -27,48 +29,34 @@
   transition: all 800ms ease;
 }
 
-/* Background shimmer while loading */
-.hero.bg-loading::before {
-  background-image: none;
-  background: linear-gradient(120deg, #1c1c1c 25%, #2a2a2a 50%, #1c1c1c 75%);
-  background-size: 400% 100%;
-  animation: shimmer 1.2s infinite;
-  opacity: 1;
-}
-
+/* === Loaded Background Image === */
 .hero.bg-loaded::before {
   background-image: var(--hero-bg);
   opacity: 0.16;
 }
 
-/* Shimmer keyframes */
-@keyframes shimmer {
-  0% {
-    background-position: -200%;
-  }
-  100% {
-    background-position: 200%;
-  }
-}
-
+/* === Hero Content Block === */
 .hero__content {
   z-index: 2;
   max-width: 800px;
   position: relative;
 }
 
+/* === Hero Title === */
 .hero__title {
   font-size: 48px;
   margin-bottom: var(--spacing-md);
   color: var(--text-primary);
 }
 
+/* === Hero Subtitle === */
 .hero__subtitle {
   font-size: 24px;
   margin-bottom: var(--spacing-lg);
   color: var(--text-secondary);
 }
 
+/* === Call to Action Button === */
 .hero__cta {
   display: inline-block;
   background-color: var(--accent-primary);
@@ -76,27 +64,12 @@
   padding: var(--spacing-md) var(--spacing-lg);
   border-radius: var(--border-radius);
   font-weight: 600;
-  transition: background-color 0.3s ease;
   text-decoration: none;
+  transition: background-color 0.3s ease;
   margin-top: var(--spacing-md);
 }
 
 .hero__cta:hover {
   background-color: var(--accent-secondary);
   text-decoration: none;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .hero {
-    padding: var(--spacing-lg) var(--spacing-md);
-  }
-
-  .hero__title {
-    font-size: 36px;
-  }
-
-  .hero__subtitle {
-    font-size: 20px;
-  }
 }

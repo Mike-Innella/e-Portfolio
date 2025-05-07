@@ -1,79 +1,60 @@
+/* === Page & Section Structure === */
+.page .projects {
+  display: flex;
+  flex-direction: column;
+}
+
 .projects {
+  display: block;
+  flex: 1;
   padding: var(--spacing-xl);
   background-color: var(--bg-primary);
   min-height: calc(100vh - 64px);
-  display: block;
-  flex: 1;
   overflow: hidden;
   margin-top: 48px;
   margin-bottom: -128px;
 }
 
 .projects__container {
+  display: block;
+  align-items: center;
+  justify-content: center;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+  margin-top: 60px;
 }
 
 .projects__heading {
-  font-size: 36px;
+  margin-top: 24px;
+  font-size: 40px;
   margin-bottom: var(--spacing-lg);
   text-align: center;
   color: var(--text-primary);
 }
 
+/* === Project Card === */
 .project-card {
   position: relative;
+  display: block;
+  width: 800px;
+  height: 400px;
   background-color: var(--bg-secondary);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 12px 8px #00000042;
   transition: all 400ms ease-in-out;
-  box-shadow: 0px 0px 12px 8px #00000042;
-  width: 480px;
-  display: block;
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
+  margin: 0 auto;
 }
 
+/* === Card Content Sections === */
 .project-card__image {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  transition: all 400ms ease;
-}
-
-.project-card__overlay {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(1fr 96px));
-  grid-template-rows: 1fr;
-  padding: 24px;
-  position: absolute;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1c1d25;
-  opacity: 0.8;
-  transition: all 400ms ease;
-  z-index: 1;
-  p {
-    font-weight: 500;
-    display: block;
-    align-self: flex-end;
-    margin-top: calc(100% - fit-content);
-    margin-bottom: 0;
-    padding-bottom: 0;
-    opacity: 0;
-    transition: all 400ms ease;
-  }
-}
-
-.project-card__title {
-  transform: scale(1);
-  opacity: 1;
-  filter: none;
   transition: all 400ms ease;
 }
 
@@ -86,12 +67,16 @@
   font-size: 20px;
   margin-bottom: var(--spacing-sm);
   color: var(--text-primary);
+  transform: scale(1);
+  opacity: 1;
+  filter: none;
+  transition: all 400ms ease;
 }
 
 .project-card__description {
+  font-size: 16px;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-md);
-  font-size: 16px;
 }
 
 .project-card__tags {
@@ -105,26 +90,27 @@
   background: linear-gradient(#fff, #fca728);
   color: #1c1d25;
   font-weight: 700;
-  padding: 2px var(--spacing-xs);
+  padding: 4px 8px;
   border-radius: var(--border-radius);
   font-size: 12px;
   height: fit-content;
-  padding: 4px 8px;
 }
 
+/* === Card Links === */
 .project-card__links {
   display: flex;
   gap: var(--spacing-md);
 }
 
 .project-card__link {
+  display: flex;
+  align-items: center;
   color: var(--accent-primary);
   text-decoration: none;
   font-weight: 500;
-  display: flex;
-  align-items: center;
   transform: scale(1);
   text-shadow: none;
+  transition: all 300ms ease;
 }
 
 .project-card__link:hover {
@@ -137,6 +123,38 @@
   margin-right: var(--spacing-xs);
 }
 
+/* === Overlay === */
+.project-card__overlay {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  background-color: #1c1d25;
+  border-radius: 12px;
+  opacity: 0.8;
+  transition: all 400ms ease;
+  z-index: 1;
+
+  /* Clean layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.project-card__overlay p {
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  align-self: flex-end;
+  transition: all 400ms ease;
+}
+
+/* === Button Busy State === */
 [aria-busy="true"] .contact__button::before {
   display: none;
 }
@@ -147,7 +165,7 @@
   cursor: default;
 }
 
-/* Responsive styles */
+/* === Responsive === */
 @media (max-width: 768px) {
   .projects__grid {
     grid-template-columns: 1fr;

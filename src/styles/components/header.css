@@ -1,16 +1,16 @@
+/* === Header base === */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: var(--bg-secondary);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-sm) 0 12px;
+  box-shadow: 0 0 16px 8px #00000079;
   z-index: 100;
-  padding: var(--spacing-sm) 0;
-  padding-bottom: 12px;
-  box-shadow: 0px 0px 16px 8px #00000079;
 }
 
+/* === Header container === */
 .header__container {
   display: flex;
   justify-content: space-between;
@@ -20,18 +20,19 @@
   padding: 0 var(--spacing-md);
 }
 
+/* === Logo styles === */
 .header__logo {
   height: 96px;
   width: auto;
-  transition: all 400ms ease;
-  filter: invert(1);
   transform: scale(0.9);
+  transition: all 400ms ease;
 }
 
 .logo__wrapper {
   display: flex;
   align-items: center;
   position: relative;
+  border-radius: 50%;
 }
 
 .logo__link {
@@ -39,30 +40,39 @@
   align-items: center;
   padding: 4px 8px;
   border-radius: 8px;
-  transition: background-color 300ms ease;
+  transition: all 400ms ease;
+}
+
+.logo__link img {
+  background: var(--gradient-accent);
+  border-radius: 50%;
+  padding: 4px;
 }
 
 .logo__link:hover {
   background-color: #f0f0f011;
 }
 
+.logo__link:hover img {
+  filter: invert(1);
+}
+
 .logo__text {
   margin-left: 12px;
   margin-right: 24px;
   font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-24px) scale(1);
+  transform: translateX(-24px);
   transition: all 400ms ease;
-  white-space: nowrap;
-  color: var(--text-primary);
 }
 
 .logo__link:hover .logo__text {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
-  text-decoration: none;
 }
 
 .logo__link:hover .header__logo {
@@ -77,6 +87,7 @@
   transform: scale(0.9);
 }
 
+/* === Navigation === */
 .header__nav {
   display: flex;
 }
@@ -93,16 +104,17 @@
   color: var(--text-primary);
   font-weight: 500;
   transition: color 0.3s ease;
-  a {
-    font-size: 20px;
-  }
+}
+
+.header__item a {
+  font-size: 20px;
 }
 
 .header__item:hover {
   color: var(--accent-primary);
 }
 
-/* Mobile menu */
+/* === Mobile menu button === */
 .header__menu-button {
   display: none;
   background: none;
@@ -112,7 +124,7 @@
   cursor: pointer;
 }
 
-/* Responsive styles */
+/* === Responsive styles === */
 @media (max-width: 768px) {
   .header__menu-button {
     display: block;

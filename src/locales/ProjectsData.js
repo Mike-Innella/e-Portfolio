@@ -1,4 +1,4 @@
-// src/locale/projectsData.js
+// src/locales/ProjectsData.js
 import fweatherImg from "../assets/project-imgs/Fweather.png";
 import omdbImg from "../assets/project-imgs/OMDB.png";
 import treactImg from "../assets/project-imgs/treact.png";

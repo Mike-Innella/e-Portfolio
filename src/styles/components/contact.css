@@ -128,18 +128,3 @@
   color: #721c24;
   border: var(--border-width) solid #f5c6cb;
 }
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .contact__heading {
-    font-size: 28px;
-  }
-
-  .contact__form {
-    padding: var(--spacing-md);
-  }
-
-  .contact__button {
-    width: 100%;
-  }
-}
