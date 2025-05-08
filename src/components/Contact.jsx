@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { sendEmail } from "../services/emailService";
 import { validateForm } from "../utils/validateForm";
 import ContactSkeleton from "../UI/Skeleton-Loaders/ContactSkeleton";
-import "../styles/components/contact.css";
+import Modal from "../UI/Modal-Overlays/modal";
+import "../styles/components/ContactModal/contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,9 +11,14 @@ const Contact = () => {
     user_email: "",
     message: "",
   });
-  const [status, setStatus] = useState(null);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [modal, setModal] = useState({
+    visible: false,
+    type: "",
+    message: "",
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1000);
@@ -27,7 +33,8 @@ const Contact = () => {
     e.preventDefault();
 
     if (!validateForm(formData)) {
-      setStatus({
+      setModal({
+        visible: true,
         type: "error",
         message: "Please fill out all fields with valid information.",
       });
@@ -35,31 +42,45 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
-    setStatus(null);
+    setModal({
+      visible: true,
+      type: "loading",
+      message: "Sending your message...",
+    });
 
     try {
       const success = await sendEmail(formData);
 
       if (success) {
-        setStatus({
+        setModal({
+          visible: true,
           type: "success",
           message: "Message sent! I'll get back to you soon.",
         });
         setFormData({ user_name: "", user_email: "", message: "" });
       } else {
-        setStatus({
+        setModal({
+          visible: true,
           type: "error",
           message: "Failed to send message. Please try again later.",
         });
       }
     } catch (error) {
-      setStatus({
+      setModal({
+        visible: true,
         type: "error",
         message: "An error occurred. Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
+      setTimeout(() => {
+        setModal((prev) => ({ ...prev, visible: false }));
+      }, 3000);
     }
+  };
+
+  const closeModal = () => {
+    setModal((prev) => ({ ...prev, visible: false }));
   };
 
   return (
@@ -106,17 +127,14 @@ const Contact = () => {
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
-
-            {status && (
-              <div
-                className={`contact__status contact__status--${status.type}`}
-              >
-                {status.message}
-              </div>
-            )}
           </>
         )}
       </div>
+
+      {/* 🔹 Modal for all status types */}
+      {modal.visible && (
+        <Modal type={modal.type} message={modal.message} onClose={closeModal} />
+      )}
     </section>
   );
 };

@@ -56,11 +56,11 @@
   width: 72px !important;
   height: 72px !important;
   border-radius: 50%;
-  box-shadow: 0 0 8px #0000004d;
+  box-shadow: 0;
   cursor: pointer;
   transition: all 400ms ease;
   z-index: 100;
-  background-color: var(--accent-primary);
+  background-color: transparent !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +73,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1e1e2f;
+  color: var(--accent-secondary);
   font-size: 48px;
   transition: all 400ms ease-in-out;
   z-index: 10;
@@ -86,16 +86,16 @@
 }
 
 .arrow-left {
-  left: 24px; 
+  left: 24px;
 }
 
 .arrow-right {
-  right: 24px; 
+  right: 24px;
 }
 
 /* Hover effect */
 .swiper-arrow__container:hover {
-  background-color: var(--accent-secondary);
+  background-color: var(--accent-secondary) !important;
   transform: translateY(-50%) scale(1.05);
   animation: pulse 1.2s infinite ease-in-out;
   i {

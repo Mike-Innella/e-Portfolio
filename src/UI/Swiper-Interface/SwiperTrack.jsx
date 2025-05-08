@@ -38,7 +38,7 @@ const SwiperTrack = ({ isLoading, projectsData }) => {
     // Add a small delay to ensure DOM is fully rendered
     const timeout = setTimeout(() => {
       const swiper = swiperRef.current?.swiper;
-      
+
       if (swiper && nextBtnRef.current && prevBtnRef.current) {
         // Set navigation elements directly using refs
         swiper.params.navigation.nextEl = nextBtnRef.current;
@@ -48,11 +48,11 @@ const SwiperTrack = ({ isLoading, projectsData }) => {
         swiper.navigation.destroy();
         swiper.navigation.init();
         swiper.navigation.update();
-        
+
         // Add manual click handlers as fallback
         if (!navigationInitialized.current) {
-          nextBtnRef.current.addEventListener('click', handleNextClick);
-          prevBtnRef.current.addEventListener('click', handlePrevClick);
+          nextBtnRef.current.addEventListener("click", handleNextClick);
+          prevBtnRef.current.addEventListener("click", handlePrevClick);
           navigationInitialized.current = true;
         }
       }
@@ -62,8 +62,8 @@ const SwiperTrack = ({ isLoading, projectsData }) => {
       clearTimeout(timeout);
       // Clean up event listeners when component unmounts
       if (navigationInitialized.current) {
-        nextBtnRef.current?.removeEventListener('click', handleNextClick);
-        prevBtnRef.current?.removeEventListener('click', handlePrevClick);
+        nextBtnRef.current?.removeEventListener("click", handleNextClick);
+        prevBtnRef.current?.removeEventListener("click", handlePrevClick);
       }
     };
   }, [handleNextClick, handlePrevClick, isLoading]);
