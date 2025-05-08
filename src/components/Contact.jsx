@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { sendEmail } from "../services/emailService";
 import { validateForm } from "../utils/validateForm";
 import ContactSkeleton from "../UI/Skeleton-Loaders/ContactSkeleton";
-import Modal from "../UI/Modal-Overlays/modal";
+import Modal from "../UI/Contact-Form/modal";
 import "../styles/components/ContactModal/contact.css";
 
 const Contact = () => {

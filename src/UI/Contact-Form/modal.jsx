@@ -1,4 +1,5 @@
 import React from "react";
+import loader from "../../assets/loading.png";
 import "../../styles/components/ContactModal/modal.css";
 
 const Modal = ({ type, message, onClose }) => {
@@ -9,6 +10,11 @@ const Modal = ({ type, message, onClose }) => {
         <span className="modal__close" onClick={onClose}>
           &times;
         </span>
+
+        {type === "loading" && (
+          <img src={loader} alt="Loading..." className="modal__loader" />
+        )}
+
         <p className="modal__message">{message}</p>
       </div>
     </div>
