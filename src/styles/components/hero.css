@@ -65,11 +65,17 @@
   border-radius: var(--border-radius);
   font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: all 400ms ease;
+  transform: scale(1);
   margin-top: var(--spacing-md);
 }
 
 .hero__cta:hover {
   background-color: var(--accent-secondary);
   text-decoration: none;
+  transform: scale(1.05);
+}
+
+.hero_cta:active {
+  transform: scale(0.95);
 }

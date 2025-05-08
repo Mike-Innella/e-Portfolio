@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, EffectCreative } from "swiper/modules";
 import "swiper/css";
@@ -15,32 +15,63 @@ import { NextArrow, PrevArrow } from "./SwiperArrows";
 const SwiperTrack = ({ isLoading, projectsData }) => {
   const items = isLoading ? Array.from({ length: 3 }) : projectsData;
   const swiperRef = useRef(null);
+  const nextBtnRef = useRef(null);
+  const prevBtnRef = useRef(null);
+  const navigationInitialized = useRef(false);
+
+  // Handle manual navigation as a fallback
+  const handleNextClick = useCallback(() => {
+    const swiper = swiperRef.current?.swiper;
+    if (swiper) {
+      swiper.slideNext();
+    }
+  }, []);
+
+  const handlePrevClick = useCallback(() => {
+    const swiper = swiperRef.current?.swiper;
+    if (swiper) {
+      swiper.slidePrev();
+    }
+  }, []);
 
   useEffect(() => {
-    const swiper = swiperRef.current?.swiper;
-
-    // Retry logic after arrows are mounted
+    // Add a small delay to ensure DOM is fully rendered
     const timeout = setTimeout(() => {
-      const nextBtn = document.querySelector(".custom-next");
-      const prevBtn = document.querySelector(".custom-prev");
+      const swiper = swiperRef.current?.swiper;
+      
+      if (swiper && nextBtnRef.current && prevBtnRef.current) {
+        // Set navigation elements directly using refs
+        swiper.params.navigation.nextEl = nextBtnRef.current;
+        swiper.params.navigation.prevEl = prevBtnRef.current;
 
-      if (swiper && nextBtn && prevBtn) {
-        swiper.params.navigation.prevEl = nextBtn;
-        swiper.params.navigation.nextEl = prevBtn;
-
+        // Update navigation
         swiper.navigation.destroy();
         swiper.navigation.init();
         swiper.navigation.update();
+        
+        // Add manual click handlers as fallback
+        if (!navigationInitialized.current) {
+          nextBtnRef.current.addEventListener('click', handleNextClick);
+          prevBtnRef.current.addEventListener('click', handlePrevClick);
+          navigationInitialized.current = true;
+        }
       }
-    }, 0);
+    }, 100); // Small delay to ensure everything is rendered
 
-    return () => clearTimeout(timeout);
-  }, []);
+    return () => {
+      clearTimeout(timeout);
+      // Clean up event listeners when component unmounts
+      if (navigationInitialized.current) {
+        nextBtnRef.current?.removeEventListener('click', handleNextClick);
+        prevBtnRef.current?.removeEventListener('click', handlePrevClick);
+      }
+    };
+  }, [handleNextClick, handlePrevClick, isLoading]);
 
   return (
     <div className="slider--container">
-      {isLoading ? <PrevArrowSkeleton /> : <PrevArrow />}
-      {isLoading ? <NextArrowSkeleton /> : <NextArrow />}
+      {isLoading ? <PrevArrowSkeleton /> : <PrevArrow ref={prevBtnRef} />}
+      {isLoading ? <NextArrowSkeleton /> : <NextArrow ref={nextBtnRef} />}
       <Swiper
         ref={swiperRef}
         modules={[Navigation, Autoplay, EffectCreative]}
@@ -70,10 +101,6 @@ const SwiperTrack = ({ isLoading, projectsData }) => {
         navigation={{
           nextEl: ".custom-next",
           prevEl: ".custom-prev",
-        }}
-        onBeforeInit={(swiper) => {
-          swiper.params.navigation.prevEl = ".custom-prev";
-          swiper.params.navigation.nextEl = ".custom-next";
         }}
       >
         {items.map((project, index) => (
