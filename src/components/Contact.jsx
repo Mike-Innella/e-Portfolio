@@ -28,7 +28,6 @@ const Contact = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -36,47 +35,69 @@ const Contact = () => {
       setModal({
         visible: true,
         type: "error",
-        message: "Please fill out all fields with valid information.",
+        message: (
+          <>
+            <div className="modal__error--content">
+              <i class="fa-solid fa-triangle-exclamation warning-icon"></i>
+              <span>Please fill out all fields with valid information.</span>
+              <i class="fa-solid fa-triangle-exclamation warning-icon"></i>
+            </div>
+          </>
+        ),
       });
       return;
     }
 
     setIsSubmitting(true);
+
+    // Step 1: Show loading modal
     setModal({
       visible: true,
       type: "loading",
-      message: "Sending your message...",
+      message: (
+        <>
+          <span>Please wait...</span>
+        </>
+      ),
     });
 
-    try {
-      const success = await sendEmail(formData);
+    // Step 2: Wait 2800ms before actually sending
+    setTimeout(async () => {
+      try {
+        const success = await sendEmail(formData);
 
-      if (success) {
-        setModal({
-          visible: true,
-          type: "success",
-          message: "Message sent! I'll get back to you soon.",
-        });
-        setFormData({ user_name: "", user_email: "", message: "" });
-      } else {
+        if (success) {
+          // Step 3: Show success modal
+          setModal({
+            visible: true,
+            type: "success",
+            message: <>"Message sent! I'll get back to you soon."</>,
+          });
+
+          setFormData({ user_name: "", user_email: "", message: "" });
+
+          // Step 4: Wait 4800ms before closing modal
+          setTimeout(() => {
+            setModal({ visible: false, type: "", message: "" });
+            setIsSubmitting(false);
+          }, 4800);
+        } else {
+          setModal({
+            visible: true,
+            type: "error",
+            message: "Failed to send message. Please try again later.",
+          });
+          setIsSubmitting(false);
+        }
+      } catch (error) {
         setModal({
           visible: true,
           type: "error",
-          message: "Failed to send message. Please try again later.",
+          message: "An error occurred. Please try again later.",
         });
+        setIsSubmitting(false);
       }
-    } catch (error) {
-      setModal({
-        visible: true,
-        type: "error",
-        message: "An error occurred. Please try again later.",
-      });
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => {
-        setModal((prev) => ({ ...prev, visible: false }));
-      }, 3000);
-    }
+    }, 2800);
   };
 
   const closeModal = () => {
@@ -91,6 +112,7 @@ const Contact = () => {
         {isLoading ? (
           <ContactSkeleton />
         ) : (
+          // Step 5: Show the form after loading
           <>
             <form className="contact__form" onSubmit={handleSubmit}>
               <input

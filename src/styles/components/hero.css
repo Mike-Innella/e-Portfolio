@@ -52,8 +52,14 @@
 /* === Hero Subtitle === */
 .hero__subtitle {
   font-size: 24px;
+  font-weight: 500;
   margin-bottom: var(--spacing-lg);
   color: var(--text-secondary);
+}
+
+.hero__subtitle-subtext {
+  font-size: 18px;
+  font-style: italic;
 }
 
 /* === Call to Action Button === */
