@@ -79,6 +79,64 @@
   font-weight: 500;
 }
 
+/* CTA Section */
+.about__cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.about__resume-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--accent-primary);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 400ms ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about__resume-button:hover {
+  background-color: var(--accent-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.about__resume-button:active {
+  transform: translateY(0);
+}
+
+.about__availability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: var(--accent-secondary);
+  background-color: rgba(66, 153, 225, 0.1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.about__check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.about__check-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
 /* Location + contact wrapper */
 .about__wrapper--locate-contact {
   display: flex;

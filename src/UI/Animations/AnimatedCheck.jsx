@@ -12,17 +12,23 @@ const AnimatedCheck = () => {
         stroke: #4CAF50;
         fill: none;
         stroke-linecap: round;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
         animation: drawCheck 800ms ease forwards;
+        opacity: 0;
+        animation-delay: 100ms;
       }
 
       @keyframes drawCheck {
         0% {
           stroke-dasharray: 100;
           stroke-dashoffset: 100;
+          opacity: 1;
         }
         100% {
           stroke-dasharray: 100;
           stroke-dashoffset: 0;
+          opacity: 1;
         }
       }
     `;

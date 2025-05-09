@@ -8,8 +8,9 @@
     <title>Mike Innella | Developer Portfolio</title>
     <meta
       name="description"
-      content="Mike Innella's professional developer portfolio showcasing projects, skills, and experience."
+      content="Mike Innella - Front-End Developer specializing in React, JavaScript, and responsive web design. View my portfolio of interactive web applications."
     />
+    <meta name="keywords" content="front-end developer, web developer, React, JavaScript, Firebase, portfolio, Mike Innella, Richmond VA" />
     <meta name="theme-color" content="#000000" />
     <meta name="msapplication-TileColor" content="#000000" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -30,14 +31,45 @@
     />
 
     <!-- Open Graph / SEO -->
-    <meta property="og:title" content="Mike Innella | Developer Portfolio" />
+    <meta property="og:title" content="Mike Innella | Front-End Developer" />
     <meta
       property="og:description"
-      content="Explore Mike Innella's latest web development projects, skillset, and contact information."
+      content="Front-End Developer turning ideas into interactive experiences. Specializing in React, JavaScript, and responsive design."
     />
     <meta property="og:image" content="%PUBLIC_URL%/preview.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://yourdomain.com" />
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mike Innella | Front-End Developer">
+    <meta name="twitter:description" content="Front-End Developer turning ideas into interactive experiences. View my portfolio.">
+    <meta name="twitter:image" content="%PUBLIC_URL%/preview.png">
+    
+    <!-- Structured Data for better SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mike Innella",
+        "url": "https://yourdomain.com",
+        "jobTitle": "Front-End Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Available for hire"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Richmond",
+          "addressRegion": "VA",
+          "addressCountry": "USA"
+        },
+        "sameAs": [
+          "https://github.com/Mike-Innella",
+          "https://linkedin.com/in/mike-innella"
+        ]
+      }
+    </script>
     
     <!-- Runtime configuration (loads before React) -->
     <script src="%PUBLIC_URL%/config.js"></script>

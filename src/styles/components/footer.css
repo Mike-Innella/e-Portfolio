@@ -1,0 +1,140 @@
+/* === Footer base === */
+.footer {
+  background: var(
+    --gradient-dark,
+    linear-gradient(to bottom, #333333, #1a1a1a)
+  );
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  color: var(--text-primary);
+  position: relative;
+  transition: all 400ms ease-in-out;
+  margin-top: var(--spacing-xl);
+}
+
+/* === Footer container === */
+.footer__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  position: relative;
+}
+
+/* === Footer content layout === */
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+}
+
+/* === Footer info section === */
+.footer__info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.footer__copyright {
+  margin-bottom: var(--spacing-sm);
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.footer__tagline {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* === Footer links section === */
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* === Footer navigation === */
+.footer__nav {
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+.footer__nav a {
+  color: var(--text-primary);
+  transition: all 400ms ease;
+  font-weight: 500;
+  position: relative;
+  padding: var(--spacing-xs);
+}
+
+.footer__nav a:hover {
+  color: var(--accent-secondary);
+}
+
+.footer__nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-secondary);
+  transition: width 400ms ease;
+}
+
+.footer__nav a:hover::after {
+  width: 100%;
+}
+
+/* === Social media links === */
+.footer__social {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: flex-end;
+}
+
+.footer__social a {
+  color: var(--text-primary);
+  font-size: 24px;
+  transition: all 400ms ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.footer__social a:hover {
+  color: var(--accent-secondary);
+  transform: translateY(-3px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* === Responsive styles === */
+@media (max-width: 768px) {
+  .footer__content {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .footer__links {
+    width: 100%;
+  }
+
+  .footer__nav,
+  .footer__social {
+    justify-content: center;
+  }
+
+  .footer__back-to-top {
+    right: 50%;
+    transform: translate(50%, 50%);
+  }
+
+  .footer__back-to-top:hover {
+    transform: translate(50%, 40%);
+  }
+}

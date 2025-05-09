@@ -20,6 +20,7 @@ const aboutSkills = [
     name: "Firebase",
     iconClass: "devicon-firebase-plain colored",
   },
+
 ];
 
 export default aboutSkills;

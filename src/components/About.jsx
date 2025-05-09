@@ -7,6 +7,7 @@ import AboutSkeleton from "../UI/Skeleton-Loaders/AboutSkeleton";
 import HueShift from "../UI/Animations/HueShift";
 import GlassSwipe from "../UI/Animations/GlassSwipe";
 import Pulse from "../UI/Animations/Pulse";
+import AnimatedCheck from "../UI/Animations/AnimatedCheck";
 
 const About = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -40,6 +41,21 @@ const About = () => {
                 to deliver high-quality projects that meet client needs and
                 exceed expectations.
               </p>
+
+              <div className="about__cta">
+                <a
+                  href="/Michael-Innella.pdf"
+                  className="about__resume-button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fas fa-file-download"></i> Download Resume
+                </a>
+                <p className="about__availability">
+                  <span className="about__check-icon"><AnimatedCheck /></span> Available for hire:
+                  Immediately
+                </p>
+              </div>
 
               <div className="about__wrapper--locate-contact">
                 <div className="about__location">
