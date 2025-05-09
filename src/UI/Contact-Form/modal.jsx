@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/components/ContactModal/modal.css";
+import "../../styles/components/Contact&Modal/modal.css";
 import OrbitRings from "../Animations/OrbitRings";
 import Pulse from "../Animations/Pulse";
 

@@ -7,7 +7,6 @@ import AboutSkeleton from "../UI/Skeleton-Loaders/AboutSkeleton";
 import HueShift from "../UI/Animations/HueShift";
 import GlassSwipe from "../UI/Animations/GlassSwipe";
 import Pulse from "../UI/Animations/Pulse";
-import AnimatedCheck from "../UI/Animations/AnimatedCheck";
 
 const About = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -49,7 +48,7 @@ const About = () => {
 
                 <p className="about__availability">
                   <span className="about__check-icon">
-                    <AnimatedCheck />
+                    <i className="fa-solid fa-check" style={{ color: "#4CAF50", fontSize: "16px" }}></i>
                   </span>{" "}
                   Available for hire: Immediately
                 </p>

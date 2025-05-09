@@ -7,7 +7,7 @@
 .projects {
   display: block;
   padding: var(--spacing-xl);
-  background-color: var(--bg-secondary);
+  background-color: transparent;
   min-height: calc(100vh - 64px);
   overflow: hidden;
   margin-top: 48px;

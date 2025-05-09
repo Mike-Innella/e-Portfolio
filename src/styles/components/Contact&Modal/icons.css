@@ -1,0 +1,134 @@
+/* Box Layout */
+.shapes--box {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -1 !important; /* Changed from 2 to -1 to ensure icons stay behind content */
+  pointer-events: none !important;
+  overflow: hidden !important;
+  background-color: var(--bg-secondary) !important; /* Added background color */
+}
+
+/* This is now applied inline in ContactPage.jsx */
+/* .page.contact {
+  position: relative;
+  z-index: 1;
+}
+
+/* Floating Icons Styles */
+.shapes {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+}
+
+.shape__wrapper {
+  position: absolute; /* Key: absolute, not relative */
+  transition: transform 100ms linear; /* Faster, smoother transition */
+  will-change: transform;
+  transform-origin: center center;
+}
+
+.shape__wrapper i {
+  color: #0f0 !important;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.shape {
+  font-size: 16px; /* Keeping the font size at 16px as requested */
+  opacity: 0.6 !important;
+  animation: shapeSpin 4800ms linear infinite;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
+}
+
+@keyframes shapeSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Evenly distributed using percentages - 6x3 grid (18 icons) */
+/* Row 1 - Symmetrical around center (50%) */
+.shape__wrapper:nth-child(1) {
+  top: 10%;
+  left: 10%;
+}
+.shape__wrapper:nth-child(2) {
+  top: 10%;
+  left: 26%;
+}
+.shape__wrapper:nth-child(3) {
+  top: 10%;
+  left: 42%;
+}
+.shape__wrapper:nth-child(4) {
+  top: 10%;
+  left: 58%;
+}
+.shape__wrapper:nth-child(5) {
+  top: 10%;
+  left: 74%;
+}
+.shape__wrapper:nth-child(6) {
+  top: 10%;
+  left: 90%;
+}
+
+/* Row 2 - Symmetrical around center (50%) */
+.shape__wrapper:nth-child(7) {
+  top: 50%;
+  left: 10%;
+}
+.shape__wrapper:nth-child(8) {
+  top: 50%;
+  left: 26%;
+}
+.shape__wrapper:nth-child(9) {
+  top: 50%;
+  left: 42%;
+}
+.shape__wrapper:nth-child(10) {
+  top: 50%;
+  left: 58%;
+}
+.shape__wrapper:nth-child(11) {
+  top: 50%;
+  left: 74%;
+}
+.shape__wrapper:nth-child(12) {
+  top: 50%;
+  left: 90%;
+}
+
+/* Row 3 - Symmetrical around center (50%) */
+.shape__wrapper:nth-child(13) {
+  top: 90%;
+  left: 10%;
+}
+.shape__wrapper:nth-child(14) {
+  top: 90%;
+  left: 26%;
+}
+.shape__wrapper:nth-child(15) {
+  top: 90%;
+  left: 42%;
+}
+.shape__wrapper:nth-child(16) {
+  top: 90%;
+  left: 58%;
+}
+.shape__wrapper:nth-child(17) {
+  top: 90%;
+  left: 74%;
+}
+.shape__wrapper:nth-child(18) {
+  top: 90%;
+  left: 90%;
+}

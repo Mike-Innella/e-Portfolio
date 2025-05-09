@@ -1,0 +1,48 @@
+.checkmark-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 50%;
+  margin: 0 auto 16px;
+}
+
+.checkmark {
+  width: 72px;
+  height: 72px;
+  display: inline-block;
+  stroke-width: 3;
+  stroke: #4CAF50;
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawCheck 1200ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  opacity: 0;
+  animation-delay: 200ms;
+}
+
+@keyframes drawCheck {
+  0% {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  20% {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 80;
+    opacity: 1;
+  }
+  60% {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 30;
+    opacity: 1;
+  }
+  100% {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}

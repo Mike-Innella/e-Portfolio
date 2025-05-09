@@ -4,7 +4,7 @@ import { validateForm } from "../utils/validateForm";
 import ContactSkeleton from "../UI/Skeleton-Loaders/ContactSkeleton";
 import Modal from "../UI/Contact-Form/modal";
 import AnimatedCheck from "../UI/Animations/AnimatedCheck";
-import "../styles/components/ContactModal/contact.css";
+import "../styles/components/Contact&Modal/contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -115,6 +115,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact" aria-busy={isLoading}>
       <div className="contact__container">
+ 
         <h2 className="contact__heading">Contact Me</h2>
 
         {isLoading ? (

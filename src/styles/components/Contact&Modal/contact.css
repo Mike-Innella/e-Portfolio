@@ -1,6 +1,6 @@
 .contact {
   padding: var(--spacing-xl) 0;
-  background-color: var(--bg-secondary);
+  background-color: transparent !important;
   min-height: calc(100vh - 64px);
   flex: 1;
   overflow: hidden;
@@ -11,6 +11,8 @@
   margin: 0 auto;
   padding: 0 var(--spacing-md);
   margin-top: 128px;
+  position: relative;
+  z-index: 3; /* Higher z-index to ensure container appears above icons */
 }
 
 .contact__heading {
@@ -18,6 +20,8 @@
   margin-bottom: var(--spacing-lg);
   text-align: center;
   color: var(--text-primary);
+  position: relative;
+  z-index: 3; /* Higher z-index to ensure heading appears above icons */
 }
 
 .contact__form {
@@ -27,6 +31,8 @@
   padding: var(--spacing-lg);
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 3; /* Higher z-index to ensure form appears above icons */
 }
 
 .contact__input,

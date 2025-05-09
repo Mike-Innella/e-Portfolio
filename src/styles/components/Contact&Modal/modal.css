@@ -66,6 +66,14 @@
   border-color: #00d08b;
 }
 
+.modal__success--content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 /* === Error State === */
 .modal--error .modal__content {
   border-color: #ed001c;
