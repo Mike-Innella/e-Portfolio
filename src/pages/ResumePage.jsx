@@ -1,4 +1,3 @@
-import React from "react";
 import { Helmet } from "react-helmet-async";
 import "../styles/pages.css";
 import "../styles/components/resume.css";
@@ -80,86 +79,98 @@ const Resume = () => {
           <div className="resume__section">
             <h3>Relevant Experience</h3>
 
-            <div className="resume__job">
-              <h4>Frontend Developer (Virtual Internship)</h4>
-              <p className="resume__company">
-                NFT Marketplace Project – Remote
-              </p>
-              <p className="resume__date">Jan 2025 – Apr 2025</p>
-              <ul>
-                <li>
-                  Refactored components using React Router with hash-based
-                  navigation.
-                </li>
-                <li>
-                  Redesigned UI with responsive layouts and custom skeleton
-                  loaders.
-                </li>
-                <li>Integrated Firebase to manage backend data efficiently.</li>
-              </ul>
+            <div className="job--wrapper">
+              <div className="resume__company">
+                <h4>NFT Marketplace Project (Virtual Internship) - Remote</h4>
+                <h4 className="resume__job">
+                  Frontend Developer (Virtual Internship)
+                </h4>
+                <p className="resume__date">Apr 2025 - May 2025</p>
+                <ul>
+                  <li>
+                    Refactored components using React Router with hash-based
+                    navigation.
+                  </li>
+                  <li>
+                    Redesigned UI with responsive layouts and custom skeleton
+                    loaders.
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            <div className="resume__job">
-              <h4>Floor Supervisor & Doorman</h4>
-              <p className="resume__company">
-                Papermoon / City Dogs – Richmond, VA
-              </p>
-              <p className="resume__date">Jun 2024 – Feb 2025</p>
-              <ul>
-                <li>
-                  Maintained high-pressure environments with safety and
-                  coordination.
-                </li>
-                <li>
-                  Developed leadership and team communication—transferable to
-                  agile teams.
-                </li>
-              </ul>
+            <div className="job--wrapper">
+              <div className="resume__company">
+                <h4>Papermoon - Richmond, VA</h4>
+                <h4 className="resume__job">Floor Supervisor & Doorman</h4>
+                <p className="resume__date">Jun 2024 - Feb 2025</p>
+                <ul>
+                  <li className="job--point">
+                    Maintained high-pressure environments with safety and
+                    coordination.
+                  </li>
+                  <li className="job--point">
+                    Developed leadership and team communication—transferable to
+                    agile teams.
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            <div className="resume__job">
-              <h4>Tire & Lube Technician</h4>
-              <p className="resume__company">
-                Howard's Motor Corp – Williamsburg, VA
-              </p>
-              <p className="resume__date">Dec 2022 – Jun 2024</p>
-              <ul>
-                <li>
-                  Diagnosed mechanical issues and executed repairs with
-                  precision.
-                </li>
-                <li>
-                  Utilized technical documentation skills and systems thinking.
-                </li>
-              </ul>
+            <div className="job--wrapper">
+              <div className="resume__company">
+                <h4>Howard's Motor Corp - Williamsburg, VA</h4>
+                <h4 className="resume__job">Tire & Lube Technician</h4>
+                <p className="resume__date">Dec 2022 - Jun 2024</p>
+                <ul>
+                  <li className="job--point">
+                    Diagnosed mechanical issues and executed repairs with
+                    precision.
+                  </li>
+                  <li className="job--point">
+                    Utilized technical documentation skills and systems
+                    thinking.
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            <div className="resume__job">
-              <h4>Amazon Seller / LLC Owner</h4>
-              <p className="resume__company">Amazon.com – Richmond, VA</p>
-              <p className="resume__date">Dec 2021 – Jul 2022</p>
-              <ul>
-                <li>
-                  Launched an eCommerce business focused on optimizing resale
-                  ROI.
-                </li>
-                <li>
-                  Handled logistics, digital tools, and market research
-                  independently.
-                </li>
-              </ul>
+            <div className="job--wrapper">
+              <div className="resume__company">
+                <h4>Amazon.com - Henrico Virginia</h4>
+                <h4 className="resume__job">Amazon Seller / LLC Owner</h4>
+                <p className="resume__date">Dec 2021 - July 2022</p>
+                <ul>
+                  <li className="job--point">
+                    Launched an eCommerce business focused on optimizing resale
+                    ROI.
+                  </li>
+                  <li className="job--point">
+                    Handled logistics, digital tools, and market research
+                    independently.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
           <div className="resume__section">
             <h3>Education</h3>
             <p>
-              <strong>Frontend Development</strong> – Frontend Simplified
-              Bootcamp – Completed May 2025
+              <strong>Frontend Development - PASS</strong> – Frontend Simplified
+              Institute (Online bootcamp) – Completed May 2025
+              <br />
+              <ul>
+                <li className="edu--point">
+                  Intensive online bootcamp training with hands-on training and
+                  real world experience to learn about Git, GitHub, Node.js,
+                  JavaScript, React, HTML, CSS and deployments.
+                </li>
+              </ul>
             </p>
           </div>
 
-          {/* Indeed Profile Link */}
+          {/* Professional Profiles & PDF Download */}
           <div className="resume__section resume__indeed-section">
             <h3>Professional Profile</h3>
             <div className="resume__button-container">
@@ -169,7 +180,7 @@ const Resume = () => {
                 rel="noopener noreferrer"
               >
                 <button className="resume__button">
-                <i className="fa-brands fa-linkedin" /> View LinkedIn Profile
+                  <i className="fa-brands fa-linkedin" /> View LinkedIn Profile
                 </button>
               </a>
             </div>
@@ -199,6 +210,7 @@ const Resume = () => {
           </div>
         </div>
       </section>
+
       <div className="btn__back--resume">
         <Link to="/about">
           <button className="resume__button">

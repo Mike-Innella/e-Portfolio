@@ -95,12 +95,17 @@
 }
 
 /* Job entries */
-.resume__job {
-  margin-bottom: var(--spacing-md);
+.job--wrapper {
+  width: 100%;
+  height: fit-content;
+  border-bottom: 2px dotted var(--accent-secondary);
+  margin-bottom: 24px;
 }
 
-.resume__job h4 {
-  font-size: 18px;
+.resume__job {
+  margin-bottom: var(--spacing-md);
+  font-weight: 900;
+  font-size: px;
   color: var(--text-primary);
   margin-bottom: var(--spacing-xs);
 }
@@ -121,8 +126,9 @@
   padding-left: var(--spacing-md);
 }
 
-.resume__job li {
+.job--point {
   list-style-type: disc;
+  margin-left: var(--spacing-lg);
   margin-bottom: var(--spacing-xs);
   color: var(--text-secondary);
 }
@@ -180,6 +186,13 @@
 .resume__indeed-section .resume__button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.edu--point {
+  list-style-type: disc;
+  margin-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-secondary);
 }
 
 /* Back to About */
