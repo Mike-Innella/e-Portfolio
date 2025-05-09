@@ -6,7 +6,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: var(--spacing-xl);
   background-color: var(--bg-primary);
   background-image: none;
   position: relative;
@@ -19,12 +18,9 @@
   position: absolute;
   top: 128px;
   left: 0;
-  width: 100vw;
+  width: 100vw !important;
   height: 100vh;
   background-image: none;
-  background-size: fill;
-  background-repeat: no-repeat;
-  background-position: center;
   opacity: 0.15;
   z-index: 1;
   transition: all 800ms ease;
@@ -32,6 +28,9 @@
 
 .hero.bg-loaded::before {
   background-image: var(--hero-bg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   opacity: 0.16;
 }
 
@@ -97,6 +96,6 @@
     transform: translateY(0);
     opacity: 1;
     z-index: 2;
-    animation: pulse 1s  linear infinite   ;
+    animation: pulse 1s linear infinite;
   }
 }

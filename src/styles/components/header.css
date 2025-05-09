@@ -115,6 +115,14 @@
   gap: var(--spacing-xl);
   padding: 0;
   margin: 0;
+  height: auto;
+  align-items: center;
+}
+
+.header__nav--open .header__list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .header__item {
@@ -150,6 +158,7 @@
   color: var(--text-primary);
   font-size: 24px;
   cursor: pointer;
+  z-index: 100;
 }
 
 /* === Responsive styles === */
@@ -160,7 +169,7 @@
 
   .header__nav {
     position: fixed;
-    top: 60px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 0;
@@ -194,6 +203,10 @@
     border-bottom: 1px solid var(--text-secondary);
     width: 100%;
     text-align: center;
+  }
+
+  .header__item:hover {
+    text-shadow: none !important;
   }
 
   .header__item:last-child {

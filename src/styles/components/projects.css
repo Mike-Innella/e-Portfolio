@@ -16,13 +16,12 @@
 
 .projects__container {
   display: block;
-  align-items: center;
-  justify-content: center;
+  align-items: center !important;
+  width: 100%;
   max-width: 1280px;
   height: 100vh;
-  margin: 0 auto;
+  margin: 0 auto !important;
   padding: 0 var(--spacing-md);
-  margin-top: 60px;
 }
 
 .projects__heading {
