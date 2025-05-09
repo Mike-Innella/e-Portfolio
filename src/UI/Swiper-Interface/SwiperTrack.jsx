@@ -70,8 +70,6 @@ const SwiperTrack = ({ isLoading, projectsData }) => {
 
   return (
     <div className="slider--container">
-      {isLoading ? <PrevArrowSkeleton /> : <PrevArrow ref={prevBtnRef} />}
-      {isLoading ? <NextArrowSkeleton /> : <NextArrow ref={nextBtnRef} />}
       <Swiper
         ref={swiperRef}
         modules={[Navigation, Autoplay, EffectCreative]}
@@ -158,6 +156,10 @@ const SwiperTrack = ({ isLoading, projectsData }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="swiper-navigation">
+        {isLoading ? <PrevArrowSkeleton /> : <PrevArrow ref={prevBtnRef} />}
+        {isLoading ? <NextArrowSkeleton /> : <NextArrow ref={nextBtnRef} />}
+      </div>
     </div>
   );
 };

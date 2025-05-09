@@ -1,9 +1,11 @@
 /* === Swiper Container === */
 .slider--container {
-  width: 1280px;
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
   position: relative;
   overflow: visible !important;
+  padding: 0 var(--spacing-lg);
 }
 
 .swiper {
@@ -47,12 +49,19 @@
   transform: translateY(-50%);
 }
 
+/* === Navigation Container === */
+.swiper-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+  width: 100%;
+}
+
 /* === Navigation Arrows === */
 /* Container for custom arrows */
 .swiper-arrow__container {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   width: 72px !important;
   height: 72px !important;
   border-radius: 50%;
@@ -82,23 +91,16 @@
 /* Arrows */
 .arrow-left i,
 .arrow-right i {
-  font-size: 48x !important;
-}
-
-.arrow-left {
-  left: 24px;
-}
-
-.arrow-right {
-  right: 24px;
+  font-size: 48px !important;
 }
 
 /* Hover effect */
 .swiper-arrow__container:hover {
   background-color: var(--accent-secondary) !important;
-  transform: translateY(-50%) scale(1.05);
+  transform: scale(1.05);
   animation: pulse 1.2s infinite ease-in-out;
-  i {
-    color: white;
-  }
+}
+
+.swiper-arrow__container:hover i {
+  color: white;
 }

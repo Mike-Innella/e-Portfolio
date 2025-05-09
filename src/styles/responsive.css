@@ -1,0 +1,405 @@
+/* 
+ * RESPONSIVE DESIGN
+ * Global media queries for e-Portfolio
+ * 
+ * Breakpoints:
+ * - 1024px: Tablet landscape
+ * - 768px: Tablet portrait (burger menu activation)
+ * - 480px: Mobile landscape
+ * - 400px: Mobile portrait
+ */
+
+/* ===== DESKTOP (1025px and up) ===== */
+/* Default styles are already defined in component CSS files */
+
+/* ===== LARGE SCREENS (1280px and below) ===== */
+@media (max-width: 1280px) {
+  /* Projects */
+  .projects__container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .project-card {
+    max-width: 750px;
+    height: auto;
+    min-height: 400px;
+  }
+}
+
+/* ===== TABLET LANDSCAPE (1024px and below) ===== */
+@media (max-width: 1024px) {
+  /* Global adjustments */
+  .container {
+    max-width: 960px;
+  }
+
+  /* Typography adjustments */
+  h1 {
+    font-size: 40px;
+  }
+  
+  h2 {
+    font-size: 32px;
+  }
+  
+  /* Component-specific adjustments */
+  /* Header */
+  .header__container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  /* Hero */
+  .hero__content {
+    padding: 0 var(--spacing-lg);
+  }
+  
+  /* Projects */
+  .projects__grid {
+    gap: var(--spacing-md);
+  }
+  
+  /* About */
+  .about__skills-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Contact */
+  .contact__container {
+    max-width: 700px;
+  }
+}
+
+/* ===== TABLET PORTRAIT (768px and below) ===== */
+@media (max-width: 768px) {
+  /* Global adjustments */
+  .container {
+    max-width: 720px;
+    padding: 0 var(--spacing-sm);
+  }
+  
+  section {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  /* Typography adjustments */
+  h1 {
+    font-size: 35px;
+  }
+  
+  h2 {
+    font-size: 29px;
+  }
+  
+  p {
+    font-size: 15px;
+  }
+  
+  /* Layout adjustments - switch to column format */
+  .row {
+    flex-direction: column;
+  }
+  
+  .col {
+    width: 100%;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  /* Header - burger menu already implemented in header.css */
+  .header__logo {
+    height: 80px;
+  }
+  
+  /* Hero */
+  .hero__content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero__text, .hero__image {
+    width: 100%;
+  }
+  
+  /* Projects */
+  .projects__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .project__card {
+    max-width: 100%;
+  }
+  
+  /* Swiper */
+  .slider--container {
+    padding: 0 40px;
+  }
+  
+  .project-card {
+    max-width: 600px;
+    height: auto;
+    min-height: 380px;
+  }
+  
+  .swiper-navigation {
+    margin-top: 30px;
+    gap: 30px;
+  }
+  
+  /* About */
+  .about__container {
+    flex-direction: column;
+  }
+  
+  .about__image-container {
+    width: 100%;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .about__content {
+    width: 100%;
+  }
+  
+  .about__skills-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Contact */
+  .contact__container {
+    margin-top: 80px;
+  }
+  
+  /* Modal */
+  .modal__content {
+    width: 90%;
+    height: auto;
+    min-height: 400px;
+  }
+}
+
+/* ===== MOBILE LANDSCAPE (480px and below) ===== */
+@media (max-width: 480px) {
+  /* Global adjustments - strict single column */
+  .container {
+    max-width: 100%;
+    padding: 0 var(--spacing-sm);
+  }
+  
+  /* Typography adjustments */
+  h1 {
+    font-size: 32px;
+  }
+  
+  h2 {
+    font-size: 26px;
+  }
+  
+  h3 {
+    font-size: 21px;
+  }
+  
+  p {
+    font-size: 14px;
+  }
+  
+  /* Header */
+  .header__logo {
+    height: 70px;
+  }
+  
+  .logo__text {
+    display: none;
+  }
+  
+  /* Hero */
+  .hero__title {
+    font-size: 29px;
+  }
+  
+  .hero__subtitle {
+    font-size: 19px;
+  }
+  
+  /* Projects */
+  .projects__heading {
+    text-align: center;
+  }
+  
+  .project__card {
+    padding: var(--spacing-sm);
+  }
+  
+  /* Swiper */
+  .slider--container {
+    padding: 0 20px;
+  }
+  
+  .project-card {
+    max-width: 100%;
+    height: auto;
+    min-height: 350px;
+  }
+  
+  .project-card__description {
+    font-size: 16px;
+  }
+  
+  .project-card__link {
+    font-size: 16px;
+  }
+  
+  .swiper-navigation {
+    margin-top: 20px;
+    gap: 20px;
+  }
+  
+  .swiper-arrow__container {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .swiper-arrow__container i {
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+  }
+  
+  /* About */
+  .about__image {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  .about__skills-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .about__cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about__availability {
+    margin-top: var(--spacing-md);
+  }
+  
+  /* Contact */
+  .contact__heading {
+    font-size: 29px;
+  }
+  
+  .contact__form {
+    padding: var(--spacing-md);
+  }
+  
+  /* Modal */
+  .modal__content {
+    width: 95%;
+    min-height: 350px;
+    padding: var(--spacing-sm);
+  }
+  
+  .modal__message {
+    font-size: 18px;
+  }
+}
+
+/* ===== MOBILE PORTRAIT (400px and below) ===== */
+@media (max-width: 400px) {
+  /* Global adjustments */
+  section {
+    padding: var(--spacing-md) 0;
+  }
+  
+  /* Typography adjustments */
+  h1 {
+    font-size: 29px;
+  }
+  
+  h2 {
+    font-size: 22px;
+  }
+  
+  p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  /* Header */
+  .header__logo {
+    height: 60px;
+  }
+  
+  .header__item a {
+    font-size: 18px;
+  }
+  
+  /* Hero */
+  .hero__title {
+    font-size: 26px;
+  }
+  
+  .hero__subtitle {
+    font-size: 18px;
+  }
+  
+  /* Projects */
+  .project__title {
+    font-size: 21px;
+  }
+  
+  /* Swiper */
+  .project-card {
+    height: auto;
+    min-height: 320px;
+  }
+  
+  .project-card__description {
+    font-size: 14px;
+  }
+  
+  .project-card__link {
+    font-size: 14px;
+  }
+  
+  .swiper-navigation {
+    margin-top: 15px;
+    gap: 15px;
+  }
+  
+  .swiper-arrow__container {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .swiper-arrow__container i {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+  
+  /* About */
+  .about__image {
+    max-width: 180px;
+  }
+  
+  /* Contact */
+  .contact__container {
+    margin-top: 60px;
+  }
+  
+  .contact__button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Modal */
+  .modal__content {
+    min-height: 300px;
+  }
+  
+  .modal__close {
+    top: 4px;
+    right: 12px;
+    font-size: 36px;
+  }
+}
