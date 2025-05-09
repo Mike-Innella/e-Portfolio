@@ -23,6 +23,11 @@ const AnimatedCheck = () => {
         0% {
           stroke-dasharray: 100;
           stroke-dashoffset: 100;
+          opacity: 0;
+        }
+        20% {
+          stroke-dasharray: 100;
+          stroke-dashoffset: 80;
           opacity: 1;
         }
         100% {

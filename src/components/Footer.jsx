@@ -36,15 +36,12 @@ const Footer = () => {
                 <i className="fab fa-github"></i>
               </a>
               <a
-                href="https://linkedin.com/in/mike-innella"
+                href="https://www.linkedin.com/in/michael-innella-b5567021b/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
                 <i className="fab fa-linkedin"></i>
-              </a>
-              <a href="mailto:contact@mikeinnella.com" aria-label="Email">
-                <i className="fas fa-envelope"></i>
               </a>
             </div>
           </div>

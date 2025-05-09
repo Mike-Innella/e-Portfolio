@@ -6,9 +6,8 @@
 
 .projects {
   display: block;
-  flex: 1;
   padding: var(--spacing-xl);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
   min-height: calc(100vh - 64px);
   overflow: hidden;
   margin-top: 48px;
@@ -20,6 +19,7 @@
   align-items: center;
   justify-content: center;
   max-width: 1280px;
+  height: 100vh;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
   margin-top: 60px;
@@ -41,6 +41,7 @@
   height: 400px;
   background-color: var(--bg-secondary);
   border-radius: 12px;
+  border: 2px solid var(--text-primary);
   overflow: hidden;
   box-shadow: 0 0 12px 8px #00000042;
   transition: all 400ms ease-in-out;

@@ -10,6 +10,7 @@ import "./styles/pages.css";
 
 import Home from "./pages/HomePage";
 import About from "./pages/AboutPage";
+import Resume from "./pages/ResumePage";
 import Projects from "./pages/ProjectsPage";
 import Contact from "./pages/ContactPage";
 
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/resume" element={<Resume />} />
           </Routes>
         </main>
         <Footer />

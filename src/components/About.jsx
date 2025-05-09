@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../styles/components/about.css";
 import { Link } from "react-router-dom";
 import headshot from "../assets/headshot-enhanced.png";
@@ -43,17 +43,15 @@ const About = () => {
               </p>
 
               <div className="about__cta">
-                <a
-                  href="/Michael-Innella.pdf"
-                  className="about__resume-button"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fas fa-file-download"></i> Download Resume
-                </a>
+                <Link to="/resume" className="resume__button">
+                  <i className="fas fa-file-alt"></i> View Resume
+                </Link>
+
                 <p className="about__availability">
-                  <span className="about__check-icon"><AnimatedCheck /></span> Available for hire:
-                  Immediately
+                  <span className="about__check-icon">
+                    <AnimatedCheck />
+                  </span>{" "}
+                  Available for hire: Immediately
                 </p>
               </div>
 
