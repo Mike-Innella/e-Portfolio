@@ -29,7 +29,6 @@
   transition: all 800ms ease;
 }
 
-/* === Loaded Background Image === */
 .hero.bg-loaded::before {
   background-image: var(--hero-bg);
   opacity: 0.16;
@@ -71,17 +70,32 @@
   border-radius: var(--border-radius);
   font-weight: 600;
   text-decoration: none;
-  transition: all 400ms ease;
-  transform: scale(1);
   margin-top: var(--spacing-md);
+  opacity: 0;
+  transform: translateY(200%);
+  animation: buttonUp 1200ms ease-out 800ms forwards;
 }
 
 .hero__cta:hover {
   background-color: var(--accent-secondary);
-  text-decoration: none;
   transform: scale(1.05);
 }
 
-.hero_cta:active {
+.hero__cta:active {
   transform: scale(0.95);
+}
+
+/* === Keyframe for Button === */
+@keyframes buttonUp {
+  0% {
+    transform: translateY(200%);
+    opacity: 0;
+    z-index: -2;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 2;
+    animation: pulse 1s  linear infinite   ;
+  }
 }

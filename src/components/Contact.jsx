@@ -3,6 +3,7 @@ import { sendEmail } from "../services/emailService";
 import { validateForm } from "../utils/validateForm";
 import ContactSkeleton from "../UI/Skeleton-Loaders/ContactSkeleton";
 import Modal from "../UI/Contact-Form/modal";
+import AnimatedCheck from "../UI/Animations/AnimatedCheck";
 import "../styles/components/ContactModal/contact.css";
 
 const Contact = () => {
@@ -71,7 +72,14 @@ const Contact = () => {
           setModal({
             visible: true,
             type: "success",
-            message: <>"Message sent! I'll get back to you soon."</>,
+            message: (
+              <>
+                <div className="modal__success--content">
+                  <AnimatedCheck />
+                  <span>Message sent! I'll get back to you soon.</span>
+                </div>
+              </>
+            ),
           });
 
           setFormData({ user_name: "", user_email: "", message: "" });
