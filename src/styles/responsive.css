@@ -131,24 +131,43 @@
 
   /* About */
   .about__container {
-    flex-direction: row-reverse
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
   }
 
-  .about__skills-list {
-    flex-direction: row !important;
-  }
-
-  .about__image-container {
-    width: 100%;
+  .about__top-content {
     margin-bottom: var(--spacing-lg);
   }
 
-  .about__content {
+  .about__image-container {
+    width: 40%;
+    margin-right: var(--spacing-md);
+  }
+
+  .about__main-content {
+    width: 60%;
+  }
+
+  .about__bottom-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
   }
 
+  .about__wrapper--locate-contact {
+    width: 48%;
+  }
+
+  .about__skills {
+    width: 48%;
+  }
+
   .about__skills-list {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
   }
 
   /* Contact */
