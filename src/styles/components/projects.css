@@ -27,7 +27,7 @@
 .projects__heading {
   margin-top: 24px;
   font-size: 40px;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
   text-align: center;
   color: var(--text-primary);
 }

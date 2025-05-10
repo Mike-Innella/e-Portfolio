@@ -20,14 +20,33 @@
   align-items: flex-start;
 }
 
-.about__content-top {
+.about__content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin-top: 96px;
+  flex: 1;
 }
 
-.about__content {
-  margin-top: 128px;
-  flex: 1;
+.about__top-content {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+}
+
+.about__bottom-content {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  width: 60%;
+  margin-left: 448px;
+  margin-bottom: 24px;
+  gap: 12px;
+}
+
+.text-cta--wrapper {
+  padding: 48px 0px 0px 48px;
 }
 
 .about__heading {
@@ -40,15 +59,16 @@
 /* Image avatar with glow */
 .about__image-container {
   position: inherit;
-  margin-top: 128px;
   width: fit-content;
   max-width: 400px;
   max-height: 400px;
   height: 100%;
   display: flex;
+  margin-top: 48px;
   flex-direction: column;
   text-align: center;
   flex: 1;
+  z-index: 2;
 }
 
 .about__image {
@@ -167,16 +187,18 @@
 /* Location + contact wrapper */
 .about__wrapper--locate-contact {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: 8px;
 }
 
 /* Contact button block */
 .location__contact {
   position: relative;
   background: var(--bg-primary);
-  padding: 16px;
+  padding: 8px 12px;
   border-radius: 16px;
   overflow: hidden;
   transition: transform 400ms ease;
@@ -206,6 +228,12 @@
 .about__contact-link {
   font-size: 16px;
   color: var(--text-primary);
+  background-color: transparent;
+}
+
+.about__contact-link:hover {
+  background-color: transparent;
+  color: var(--text-secondary);
 }
 
 /* Location panel */
@@ -260,7 +288,7 @@
 .about__location-subtext {
   margin-left: 24px;
   color: var(--bg-primary);
-  font-weight: 500;
+  font-weight: 700;
   visibility: hidden;
   opacity: 0;
   transform: translateX(-8px);
@@ -269,11 +297,13 @@
 }
 
 .about__location-text {
+    font-weight: 700;
   font-size: 20px;
 }
 
 .about__location-subtext {
-  font-size: 28px;
+      font-weight: 900;
+  font-size: 20px;
   font-style: italic;
 }
 
@@ -292,8 +322,18 @@
 }
 
 /* Skills section */
+.about__skills--wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
 .about__skills {
-  margin-top: var(--spacing-lg);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .about__skills-title {
@@ -304,14 +344,17 @@
 
 .about__skills-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-xl);
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 12px;
 }
 
 .about__skill {
   position: relative;
-  height: 136px;
-  width: 136px;
+  height: 96px;
+  width: 118px;
   background: transparent;
   color: var(--text-primary);
   border-radius: var(--border-radius);
@@ -321,13 +364,14 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  font-size: 20px;
+  font-size: 16px;
   transition: all 400ms ease;
   overflow: hidden;
 }
 
 .about__skill i {
-  font-size: 48px;
+  padding-top: 8px;
+  font-size: 36px;
   transition: all 400ms ease;
   z-index: 1;
 }
@@ -375,4 +419,36 @@
   transition: all 400ms ease;
   pointer-events: none;
   z-index: 0;
+}
+
+/* === Button Avatar === */
+.location__contact {
+  overflow: visible;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-image: url("../../assets/pcguy.png");
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  left: 32px;
+  opacity: 0;
+  transition: all 400ms ease;
+}
+
+.about__contact-link.animate .avatar {
+  animation: slideIn 800ms forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    left: 36px;
+    opacity: 0;
+  }
+  100% {
+    left: -96px;
+    opacity: 1;
+  }
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom"; // ✅ include useNavigate
 import "../styles/components/about.css";
-import { Link } from "react-router-dom";
 import headshot from "../assets/headshot-enhanced.png";
 import aboutSkills from "../locales/AboutSkills";
 import AboutSkeleton from "../UI/Skeleton-Loaders/AboutSkeleton";
@@ -9,6 +9,19 @@ import GlassSwipe from "../UI/Animations/GlassSwipe";
 import Pulse from "../UI/Animations/Pulse";
 
 const About = () => {
+  const navigate = useNavigate(); // ✅ added this import
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    const link = e.currentTarget;
+
+    link.classList.add("animate");
+
+    setTimeout(() => {
+      navigate("/contact");
+    }, 800);
+  };
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -33,37 +46,39 @@ const About = () => {
                     className="about__image"
                   />
                 </div>
-                <div className="about--text">
-                  <h2 className="about__heading">About Me</h2>
-                  <p className="about__text">
-                    I build web applications using modern JavaScript
-                    technologies and enjoy creating clean, responsive designs.
-                    With a passion for problem-solving and attention to detail,
-                    I develop solutions that are both functional and
-                    user-friendly.
-                  </p>
-                  <p className="about__text">
-                    My approach combines technical expertise with creative
-                    thinking to deliver high-quality projects that meet client
-                    needs and exceed expectations.
-                  </p>
-                </div>
-                <div className="cta--wrapper">
-                  <div className="about__cta">
-                    <Link to="/resume" className="resume__button">
-                      <i className="fas fa-file-alt"></i> View Resume
-                    </Link>
-                  </div>
-                  <div className="cta--available">
-                    <p className="about__availability">
-                      <span className="about__check-icon">
-                        <i
-                          className="fa-solid fa-check"
-                          style={{ color: "#4CAF50", fontSize: "16px" }}
-                        ></i>
-                      </span>{" "}
-                      Available for hire: Immediately
+                <div className="text-cta--wrapper">
+                  <div className="about--text">
+                    <h2 className="about__heading">About Me</h2>
+                    <p className="about__text">
+                      I build web applications using modern JavaScript
+                      technologies and enjoy creating clean, responsive designs.
+                      With a passion for problem-solving and attention to
+                      detail, I develop solutions that are both functional and
+                      user-friendly.
                     </p>
+                    <p className="about__text">
+                      My approach combines technical expertise with creative
+                      thinking to deliver high-quality projects that meet client
+                      needs and exceed expectations.
+                    </p>
+                  </div>
+                  <div className="cta--wrapper">
+                    <div className="about__cta">
+                      <Link to="/resume" className="resume__button">
+                        <i className="fas fa-file-alt"></i> View Resume
+                      </Link>
+                    </div>
+                    <div className="cta--available">
+                      <p className="about__availability">
+                        <span className="about__check-icon">
+                          <i
+                            className="fa-solid fa-check"
+                            style={{ color: "#4CAF50", fontSize: "16px" }}
+                          ></i>
+                        </span>{" "}
+                        Available for hire: Immediately
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -73,29 +88,36 @@ const About = () => {
                     <Pulse />
                     <i className="about__location-icon fa-solid fa-location-dot" />
                     <span className="about__location-text">
-                      Based in Richmond, VA USA
+                      Richmond, VA USA
                     </span>
                     <span className="about__location-subtext">
                       Available remotely!
                     </span>
                   </div>
                   <div className="location__contact">
-                    <Link to="/contact" className="about__contact-link">
+                    <button
+                      className="about__contact-link"
+                      onClick={handleContactClick}
+                      style={{ position: "relative" }}
+                    >
+                      <span className="avatar" />
                       Let's work together.
-                    </Link>
+                    </button>
                   </div>
                 </div>
-                <div className="about__skills">
-                  <h3 className="about__skills-title">Technical Skills</h3>
-                  <ul className="about__skills-list">
-                    {aboutSkills.map((skill, index) => (
-                      <li className="about__skill" key={index}>
-                        <GlassSwipe />
-                        <i className={skill.iconClass}></i>
-                        <span>{skill.name}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="about__skills--wrapper">
+                  <div className="about__skills">
+                    <h3 className="about__skills-title">Technical Skills</h3>
+                    <ul className="about__skills-list">
+                      {aboutSkills.map((skill, index) => (
+                        <li className="about__skill" key={index}>
+                          <GlassSwipe />
+                          <i className={skill.iconClass}></i>
+                          <span>{skill.name}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>

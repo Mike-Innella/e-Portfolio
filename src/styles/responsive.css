@@ -130,44 +130,74 @@
   }
 
   /* About */
+
   .about__container {
     display: flex;
     flex-direction: column;
     padding: 0 24px;
+    width: 100%;
+    margin: 0 auto !important;
   }
 
   .about__top-content {
-    margin-bottom: var(--spacing-lg);
+    flex-direction: column !important;
   }
 
   .about__image-container {
-    width: 40%;
-    margin-right: var(--spacing-md);
+    width: 272px !important;
+    height: 272px !important;
+    margin: 0 auto !important;
+  }
+
+  .about__image {
+    max-width: 272px !important;
+    height: 272px !important;
+    margin: 0 auto !important;
+  }
+
+  .about__image-container::before {
+    width: 272px !important;
+    height: 272px !important;
   }
 
   .about__main-content {
     width: 60%;
   }
 
+  .text-cta--wrapper {
+    padding: 24px 48px !important;
+    margin-left: 48px !important;
+    margin-right: 48px !important;
+  }
+
   .about__bottom-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+    width: 80% !important;
+    margin-left: 96px !important;
+    margin-right: 144px !important;
   }
 
   .about__wrapper--locate-contact {
     width: 48%;
   }
 
+  .about__skills--wrapper {
+    width: 100% !important;
+  }
+
   .about__skills {
-    width: 48%;
+    width: 100%;
   }
 
   .about__skills-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-sm);
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  .about__skill {
+    width: 92px !important;
+    span {
+      font-size: 12px !important;
+    }
   }
 
   /* Contact */
@@ -188,7 +218,7 @@
   /* Global adjustments - strict single column */
   .container {
     max-width: 100%;
-    padding: 0 var(--spacing-lg);
+    padding: 0 var(--spacing-lg) !important;
   }
 
   /* Typography adjustments */
@@ -213,10 +243,6 @@
     height: 70px;
   }
 
-  .logo__text {
-    display: none;
-  }
-
   /* Hero */
   .hero__title {
     font-size: 29px;
@@ -224,6 +250,10 @@
 
   .hero__subtitle {
     font-size: 19px;
+  }
+
+  .hero::before {
+    top: 96px !important;
   }
 
   /* Projects */
@@ -237,13 +267,13 @@
 
   /* Swiper */
   .slider--container {
-    padding: 0 20px;
+    padding: 0 !important;
   }
 
   .project-card {
     max-width: 100%;
     height: auto;
-    min-height: 350px;
+    min-height: 360px;
   }
 
   .project-card__description {
