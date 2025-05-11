@@ -14,7 +14,7 @@ const shimmerAfterStyle = {
   height: "100%",
   width: "100%",
   background:
-    "linear-gradient(to right, transparent 0%, #f0f0f077 50%, transparent 100%)",
+    "linear-gradient(to right, transparent 0%, #f0f0f080 50%, transparent 100%)",
   animation: "loading 1.2s infinite",
 };
 
@@ -37,6 +37,7 @@ const Skeleton = ({
   width = "100%",
   height = "100%",
   borderRadius = "4px",
+  margin = "0",
 }) => {
   useEffect(() => {
     injectKeyframes();
@@ -49,6 +50,7 @@ const Skeleton = ({
         width,
         height,
         borderRadius,
+        margin,
         backgroundColor: "transparent",
       }}
     >

@@ -25,7 +25,7 @@ const Header = () => {
               Home{" "}
               <i
                 className="fa-solid fa-backward-step"
-                style={{ marginLeft: "24px" }}
+                style={{ marginLeft: "var(--spacing-lg)" }}
               ></i>
             </span>
           </Link>
@@ -41,6 +41,15 @@ const Header = () => {
 
         <nav className={`header__nav ${menuOpen ? "header__nav--open" : ""}`}>
           <ul className="header__list">
+            <li
+              className={`header__item trace-hover ${
+                location.pathname === "/" ? "active" : ""
+              }`}
+            >
+              <Link to="/" onClick={handleMenuClose}>
+                Home
+              </Link>
+            </li>
             <li
               className={`header__item trace-hover ${
                 location.pathname === "/about" ? "active" : ""

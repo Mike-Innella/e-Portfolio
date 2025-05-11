@@ -71,10 +71,7 @@ const About = () => {
                     <div className="cta--available">
                       <p className="about__availability">
                         <span className="about__check-icon">
-                          <i
-                            className="fa-solid fa-check"
-                            style={{ color: "#4CAF50", fontSize: "16px" }}
-                          ></i>
+                          <i className="fa-solid fa-check"></i>
                         </span>{" "}
                         Available for hire: Immediately
                       </p>

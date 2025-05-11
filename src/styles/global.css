@@ -24,10 +24,22 @@
   --spacing-md: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 96px;
 
   /* Border */
   --border-width: 2px;
   --border-radius: 4px;
+  
+  /* Transitions */
+  --transition-standard: all 400ms ease;
+  --transition-slow: all 600ms ease-in-out;
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 16px 24px rgba(0, 0, 0, 0.2);
 
   /* Images */
   --hero-bg-image: url("../assets/richmond.jpg");
@@ -54,7 +66,7 @@ body {
 a {
   color: var(--accent-primary);
   text-decoration: none;
-  transition: all 400ms ease;
+  transition: var(--transition-standard);
 }
 
 h1,
