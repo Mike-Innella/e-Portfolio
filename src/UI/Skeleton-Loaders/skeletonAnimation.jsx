@@ -1,5 +1,6 @@
 // src/UI/Skeleton-Loaders/skeletonAnimation.jsx
 import React, { useEffect } from "react";
+import "../../styles/skeletonResponsive.css";
 
 const shimmerStyle = {
   position: "relative",
@@ -38,6 +39,7 @@ const Skeleton = ({
   height = "100%",
   borderRadius = "4px",
   margin = "0",
+  className = "",
 }) => {
   useEffect(() => {
     injectKeyframes();
@@ -45,6 +47,7 @@ const Skeleton = ({
 
   return (
     <div
+      className={className}
       style={{
         ...shimmerStyle,
         width,

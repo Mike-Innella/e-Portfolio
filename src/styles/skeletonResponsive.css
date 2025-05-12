@@ -1,0 +1,122 @@
+/* Skeleton Responsive Styles */
+
+/* Base styles for skeleton components */
+.skeleton-responsive {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skeleton-image {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
+
+.skeleton-location-text {
+  margin-left: var(--spacing-lg);
+}
+
+.skeleton-container {
+  width: 60%;
+  margin-left: 448px;
+}
+
+/* Tablet landscape (1024px and below) */
+@media (max-width: 1024px) {
+  .skeleton-image {
+    width: 272px !important;
+    height: 272px !important;
+  }
+  
+  .about__bottom-content .skeleton-container {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  .about__skills-list .about__skill {
+    width: 92px !important;
+  }
+}
+
+/* Tablet portrait (768px and below) */
+@media (max-width: 768px) {
+  .about__top-content {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .text-cta--wrapper {
+    padding: 24px !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  
+  .cta--wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  
+  .about__wrapper--locate-contact {
+    width: 80% !important;
+    margin: 12px auto !important;
+  }
+  
+  .about__skills-list {
+    width: 60% !important;
+    justify-content: space-between !important;
+    margin: 12px auto !important;
+  }
+}
+
+/* Mobile landscape (480px and below) */
+@media (max-width: 480px) {
+  .skeleton-image {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  
+  .about__wrapper--locate-contact {
+    width: 100% !important;
+    margin: 0 !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .about__location {
+    flex-direction: column !important;
+    align-items: center !important;
+    transform: scale(0.8);
+  }
+  
+  .skeleton-location-text {
+    margin-left: 0 !important;
+    margin-top: var(--spacing-sm) !important;
+    text-align: center !important;
+  }
+  
+  .about__skills-list {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  .about__skill {
+    width: 92px !important;
+    height: 112px !important;
+  }
+}
+
+/* Mobile portrait (400px and below) */
+@media (max-width: 400px) {
+  .skeleton-image {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  
+  .about__wrapper--locate-contact {
+    width: 75% !important;
+    margin: 0 auto !important;
+  }
+}
