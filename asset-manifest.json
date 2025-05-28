@@ -1,31 +1,32 @@
 {
   "files": {
-    "main.css": "/e-Portfolio/static/css/main.e6ca7a31.css",
-    "main.js": "/e-Portfolio/static/js/main.103348de.js",
+    "main.css": "/e-Portfolio/static/css/main.244d7f5c.css",
+    "main.js": "/e-Portfolio/static/js/main.00711473.js",
+    "static/media/MILogo.png": "/e-Portfolio/static/media/MILogo.ed85fa26a15a086e6f0d.png",
     "static/media/richmond.jpg": "/e-Portfolio/static/media/richmond.73c1e37394b8743319b5.jpg",
     "static/media/fa-solid-900.ttf": "/e-Portfolio/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/headshot-enhanced.png": "/e-Portfolio/static/media/headshot-enhanced.08f9c48d659a281308d3.png",
     "static/media/fa-brands-400.ttf": "/e-Portfolio/static/media/fa-brands-400.1815e00441357e01619e.ttf",
-    "static/media/logo-black-png.PNG": "/e-Portfolio/static/media/logo-black-png.55d96cfc1243065441a6.PNG",
     "static/media/fa-solid-900.woff2": "/e-Portfolio/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
     "static/media/nftmarket.png": "/e-Portfolio/static/media/nftmarket.6593a4fcb1ccb13792fa.png",
     "static/media/OMDB.png": "/e-Portfolio/static/media/OMDB.da2a41c20a2d81555712.png",
     "static/media/fa-brands-400.woff2": "/e-Portfolio/static/media/fa-brands-400.c210719e60948b211a12.woff2",
     "static/media/books.png": "/e-Portfolio/static/media/books.286093773f0a8ba1442a.png",
+    "static/media/Resume.pdf": "/e-Portfolio/static/media/Resume.ed39c04f266481e68dc3.pdf",
     "static/media/treact.png": "/e-Portfolio/static/media/treact.f9e16c01f7280782ad94.png",
     "static/media/fa-regular-400.ttf": "/e-Portfolio/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
+    "static/media/skinstric.png": "/e-Portfolio/static/media/skinstric.ab9c4694d890481f3f95.png",
     "static/media/Fweather.png": "/e-Portfolio/static/media/Fweather.48056a8210e4cd319c50.png",
     "static/media/pcguy.png": "/e-Portfolio/static/media/pcguy.8722ca4b7ed9fbc19cc8.png",
     "static/media/fa-regular-400.woff2": "/e-Portfolio/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
-    "static/media/Michael Innella - Resume - 2025.pdf": "/e-Portfolio/static/media/Michael Innella - Resume - 2025.4fafc177770bf245a47b.pdf",
     "static/media/fa-v4compatibility.ttf": "/e-Portfolio/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/e-Portfolio/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/e-Portfolio/index.html",
-    "main.e6ca7a31.css.map": "/e-Portfolio/static/css/main.e6ca7a31.css.map",
-    "main.103348de.js.map": "/e-Portfolio/static/js/main.103348de.js.map"
+    "main.244d7f5c.css.map": "/e-Portfolio/static/css/main.244d7f5c.css.map",
+    "main.00711473.js.map": "/e-Portfolio/static/js/main.00711473.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6ca7a31.css",
-    "static/js/main.103348de.js"
+    "static/css/main.244d7f5c.css",
+    "static/js/main.00711473.js"
   ]
 }
