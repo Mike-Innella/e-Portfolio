@@ -137,14 +137,16 @@
   gap: var(--spacing-md);
   width: 100%;
   margin: 12px 0;
+  height: 76px;
 }
 
 .resume__button-container {
-  width: fit-content;
+  width: 140px;
+  height: 72px;
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  background-color: var(--accent-primary);
+  gap: 12px;
+  background-color: transparent;
   color: white;
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--spacing-sm);
@@ -154,7 +156,7 @@
   margin: 12px 0;
 }
 
-.resume__button-container:hover {
+.resume__button-container a:hover {
   background-color: var(--accent-secondary);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
@@ -166,13 +168,13 @@
 
 .cta--availability {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   gap: var(--spacing-sm);
   font-weight: 500;
   color: var(--text-primary);
   background-color: var(--bg-primary);
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: var(--spacing-sm);
   border-radius: var(--spacing-sm);
   margin: 0;
 }
@@ -186,7 +188,7 @@
   background-color: rgba(66, 153, 225, 0.1);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--spacing-sm);
-  margin: 0;
+  margin-top: 84px;
   width: 272px;
 }
 

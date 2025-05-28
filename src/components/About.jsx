@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/components/about.css";
 import headshot from "../assets/headshot-enhanced.png";
 import resumePDF from "../assets/Resume.pdf";
@@ -73,8 +73,8 @@ const About = () => {
                             rel="noopener noreferrer"
                           >
                             <button className="resume__button">
-                              <i className="fa-brands fa-linkedin" /> View
-                              LinkedIn Profile
+                              <i className="fa-brands fa-linkedin" /> <br />
+                              View LinkedIn Profile
                             </button>
                           </a>
                         </div>
@@ -85,8 +85,8 @@ const About = () => {
                             rel="noopener noreferrer"
                           >
                             <button className="resume__button">
-                              <i className="fas fa-briefcase"></i> View Indeed
-                              Profile
+                              <i className="fas fa-briefcase"></i> <br />
+                              View Indeed Profile
                             </button>
                           </a>
                         </div>
@@ -98,8 +98,8 @@ const About = () => {
                             rel="noopener noreferrer"
                           >
                             <button className="resume__button">
-                              <i className="fas fa-file-download"></i> Download
-                              Resume PDF
+                              <i className="fas fa-file-download"></i> <br />
+                              Download Resume PDF
                             </button>
                           </a>
                         </div>

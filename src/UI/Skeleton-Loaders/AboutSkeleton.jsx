@@ -7,27 +7,72 @@ const AboutSkeleton = () => {
       <div className="about__top-content">
         {/* Avatar Image Placeholder with HueShift effect placeholder */}
         <div className="about__image-container skeleton-responsive">
-          <Skeleton 
-            width="400px" 
-            height="400px" 
-            borderRadius="50%" 
+          <Skeleton
+            width="400px"
+            height="400px"
+            borderRadius="50%"
             className="skeleton-image"
           />
         </div>
 
         <div className="text-cta--wrapper">
           {/* Heading */}
-          <Skeleton width="240px" height="48px" borderRadius="4px" margin="0 0 var(--spacing-md) 0" />
+          <Skeleton
+            width="240px"
+            height="48px"
+            borderRadius="4px"
+            margin="0 0 var(--spacing-md) 0"
+          />
 
-          {/* Paragraph text - using a single container instead of multiple lines */}
+          {/* Paragraph text - split into two paragraphs to match About.jsx */}
           <div className="about--text">
-            <Skeleton width="100%" height="120px" borderRadius="4px" margin="0 0 var(--spacing-md) 0" />
+            <Skeleton
+              width="100%"
+              height="60px"
+              borderRadius="4px"
+              margin="0 0 var(--spacing-sm) 0"
+            />
+            <Skeleton
+              width="100%"
+              height="60px"
+              borderRadius="4px"
+              margin="0 0 var(--spacing-md) 0"
+            />
           </div>
 
           <div className="cta--wrapper">
-            {/* Resume button and availability in proper layout */}
+            {/* Professional Profile section with heading and three buttons */}
             <div className="about__cta">
-              <Skeleton width="160px" height="40px" borderRadius="8px" />
+              <div className="resume__section resume__indeed-section">
+                {/* "Professional Profile" heading */}
+                <Skeleton
+                  width="200px"
+                  height="28px"
+                  borderRadius="4px"
+                  margin="0 0 var(--spacing-sm) 0"
+                />
+
+                {/* Three buttons for LinkedIn, Indeed, Resume */}
+                <div className="resume__button-container">
+                  <Skeleton
+                    width="180px"
+                    height="45px"
+                    borderRadius="8px"
+                    margin="0 0 var(--spacing-xs) 0"
+                  />
+                </div>
+                <div className="resume__button-container">
+                  <Skeleton
+                    width="180px"
+                    height="45px"
+                    borderRadius="8px"
+                    margin="0 0 var(--spacing-xs) 0"
+                  />
+                </div>
+                <div className="resume__button-container">
+                  <Skeleton width="180px" height="45px" borderRadius="8px" />
+                </div>
+              </div>
             </div>
 
             {/* Availability indicator */}
@@ -42,16 +87,35 @@ const AboutSkeleton = () => {
         <div className="about__wrapper--locate-contact">
           {/* Location with Pulse effect placeholder */}
           <div className="about__location">
-            <Skeleton width="48px" height="48px" borderRadius="50%" margin="0" />
+            <Skeleton
+              width="48px"
+              height="48px"
+              borderRadius="50%"
+              margin="0"
+            />
             <div className="skeleton-location-text">
-              <Skeleton width="120px" height="20px" borderRadius="4px" margin="0 0 8px 0" />
-              <Skeleton width="160px" height="20px" borderRadius="4px" margin="0" />
+              <Skeleton
+                width="120px"
+                height="20px"
+                borderRadius="4px"
+                margin="0 0 8px 0"
+              />
+              <Skeleton
+                width="160px"
+                height="20px"
+                borderRadius="4px"
+                margin="0"
+              />
             </div>
           </div>
 
-          {/* Contact link */}
+          {/* "Let's work together" button */}
           <div className="location__contact">
-            <Skeleton width="120px" height="40px" borderRadius="var(--spacing-md)" />
+            <Skeleton
+              width="180px"
+              height="40px"
+              borderRadius="var(--spacing-md)"
+            />
           </div>
         </div>
 
@@ -64,16 +128,16 @@ const AboutSkeleton = () => {
             <div className="about__skills-list">
               {Array.from({ length: 5 }).map((_, i) => (
                 <div key={i} className="about__skill">
-                  <Skeleton 
-                    width="36px" 
-                    height="36px" 
-                    borderRadius="4px" 
+                  <Skeleton
+                    width="36px"
+                    height="36px"
+                    borderRadius="4px"
                     margin="var(--spacing-md) 0"
                   />
-                  <Skeleton 
-                    width="80px" 
-                    height="16px" 
-                    borderRadius="4px" 
+                  <Skeleton
+                    width="80px"
+                    height="16px"
+                    borderRadius="4px"
                     margin="var(--spacing-md) 0 0 0"
                   />
                 </div>
