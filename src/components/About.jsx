@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom"; // ✅ include useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/components/about.css";
 import headshot from "../assets/headshot-enhanced.png";
+import resumePDF from "../assets/Resume.pdf";
 import aboutSkills from "../locales/AboutSkills";
 import AboutSkeleton from "../UI/Skeleton-Loaders/AboutSkeleton";
 import HueShift from "../UI/Animations/HueShift";
@@ -9,12 +10,11 @@ import GlassSwipe from "../UI/Animations/GlassSwipe";
 import Pulse from "../UI/Animations/Pulse";
 
 const About = () => {
-  const navigate = useNavigate(); // ✅ added this import
+  const navigate = useNavigate();
 
   const handleContactClick = (e) => {
     e.preventDefault();
     const link = e.currentTarget;
-
     link.classList.add("animate");
 
     setTimeout(() => {
@@ -64,9 +64,46 @@ const About = () => {
                   </div>
                   <div className="cta--wrapper">
                     <div className="about__cta">
-                      <Link to="/resume" className="resume__button">
-                        <i className="fas fa-file-alt"></i> View Resume
-                      </Link>
+                      <div className="resume__section resume__indeed-section">
+                        <h3>Professional Profile</h3>
+                        <div className="resume__button-container">
+                          <a
+                            href="https://www.linkedin.com/in/michael-innella-b5567021b/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <button className="resume__button">
+                              <i className="fa-brands fa-linkedin" /> View
+                              LinkedIn Profile
+                            </button>
+                          </a>
+                        </div>
+                        <div className="resume__button-container">
+                          <a
+                            href="https://my.indeed.com/p/michaeli-b5567021b"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <button className="resume__button">
+                              <i className="fas fa-briefcase"></i> View Indeed
+                              Profile
+                            </button>
+                          </a>
+                        </div>
+                        <div className="resume__button-container">
+                          <a
+                            href={resumePDF}
+                            download="Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <button className="resume__button">
+                              <i className="fas fa-file-download"></i> Download
+                              Resume PDF
+                            </button>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                     <div className="cta--available">
                       <p className="about__availability">
@@ -79,6 +116,7 @@ const About = () => {
                   </div>
                 </div>
               </div>
+
               <div className="about__bottom-content">
                 <div className="about__wrapper--locate-contact">
                   <div className="about__location">

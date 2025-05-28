@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var((--spacing-xl));
+  padding: var(--spacing-xl);
   background-color: var(--bg-secondary);
   min-height: calc(100vh - 64px);
   flex: 1;
@@ -116,17 +116,31 @@
   margin-top: var(--spacing-xl);
   margin-bottom: var(--spacing-xl);
   gap: var(--spacing-lg);
+  width: 100%;
+  justify-content: space-between;
 }
 .about__cta {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 0 auto;
   flex-wrap: wrap;
   gap: var(--spacing-md);
+  width: 100%;
 }
 
-.about__resume-button {
+.resume____indeed-section {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  width: 100%;
+  margin: 12px 0;
+}
+
+.resume__button-container {
+  width: fit-content;
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
@@ -137,15 +151,16 @@
   font-weight: 600;
   transition: var(--transition-standard);
   box-shadow: var(--shadow-sm);
+  margin: 12px 0;
 }
 
-.about__resume-button:hover {
+.resume__button-container:hover {
   background-color: var(--accent-secondary);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
-.about__resume-button:active {
+.resume__button-container:active {
   transform: translateY(0);
 }
 

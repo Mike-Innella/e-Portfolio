@@ -61,7 +61,7 @@
 }
 
 .logo__link img {
-  background: var(--gradient-accent);
+  background: var(--bg-secondary);
   border-radius: 50%;
   padding: var(--spacing-xs);
 }

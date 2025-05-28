@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/components/header.css";
-import logoBlack from "../assets/logo-black-png.PNG";
+import logoNew from "../assets/MILogo.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +17,7 @@ const Header = () => {
         <div className="logo__wrapper">
           <Link to="/" onClick={handleMenuClose} className="logo__link">
             <img
-              src={logoBlack}
+              src={logoNew}
               alt="Mike Innella Logo"
               className="header__logo"
             />
